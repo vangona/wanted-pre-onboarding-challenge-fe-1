@@ -57,6 +57,23 @@
           "object",
           "type"
         ],
+        "pathGroups": [
+          {
+            "pattern": "react-dom/client",
+            "group": "builtin",
+            "position": "before"
+          },
+          {
+            "pattern": "react",
+            "group": "builtin",
+            "position": "before"
+          },
+          {
+            "pattern": "@**",
+            "group": "internal",
+            "position": "before"
+          }
+        ],
         "alphabetize": {
           "order": "asc",
           "caseInsensitive": true

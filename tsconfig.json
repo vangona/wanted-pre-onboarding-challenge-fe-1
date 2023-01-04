@@ -1,8 +1,8 @@
 {
+  "extends": "./tsconfig.paths.json",
   "compilerOptions": {
     "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],
-    "baseUrl": "./src",
     "noImplicitAny": true,
     "strictNullChecks": true,
     "allowJs": false,
@@ -16,14 +16,7 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "react-jsx",
-    "incremental": true,
-    "paths": {
-      "@public/*": ["../public/*"],
-      "@apis/*": ["./apis/*"],
-      "@routes/*": ["./routes/*"],
-      "@components/*": ["./components/*"],
-      "@hooks/*": ["./hooks/*"]
-    }
+    "incremental": true
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]

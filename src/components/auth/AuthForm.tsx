@@ -1,10 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import signup from '@apis/signup';
-import * as Styled from '../../styles/auth/AuthForm.style';
-import checkIsValidEmail from '../../utils/checkIsValidEmail';
-import checkIsValidPassword from '../../utils/checkIsValidPassword';
+import * as Styled from '@styles/auth/AuthForm.style';
+import checkIsValidEmail from '@utils/checkIsValidEmail';
+import checkIsValidPassword from '@utils/checkIsValidPassword';
 
-const RegisterForm = () => {
+interface AuthFormProps {
+  isRegister: boolean;
+}
+
+const AuthForm = ({ isRegister }: AuthFormProps) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [repassword, setRepassword] = useState('');
@@ -26,7 +30,7 @@ const RegisterForm = () => {
     setRepassword(target.value);
   };
 
-  const handleSubmit: React.FormEventHandler = async (event) => {
+  const handleRegister: React.FormEventHandler = async (event) => {
     event.preventDefault();
     setError('');
     if (password !== repassword) setError('비밀번호가 다릅니다.');
@@ -48,7 +52,7 @@ const RegisterForm = () => {
   }, [email, password]);
 
   return (
-    <Styled.Form onSubmit={handleSubmit}>
+    <Styled.Form onSubmit={handleRegister}>
       <Styled.Box>
         <Styled.Label>이메일 : </Styled.Label>
         <Styled.EmailInput
@@ -65,20 +69,22 @@ const RegisterForm = () => {
           onChange={handleChangePassword}
         />
       </Styled.Box>
-      <Styled.Box>
-        <Styled.Label>비밀번호 확인 : </Styled.Label>
-        <Styled.PasswordInput
-          type='password'
-          value={repassword}
-          onChange={handleChangeRePassword}
-        />
-      </Styled.Box>
+      {isRegister && (
+        <Styled.Box>
+          <Styled.Label>비밀번호 확인 : </Styled.Label>
+          <Styled.PasswordInput
+            type='password'
+            value={repassword}
+            onChange={handleChangeRePassword}
+          />
+        </Styled.Box>
+      )}
       <div>{error}</div>
       <Styled.SubmitButton disabled={!isValidForm}>
-        회원가입하기
+        {isRegister ? '회원가입' : '로그인'}
       </Styled.SubmitButton>
     </Styled.Form>
   );
 };
 
-export default RegisterForm;
+export default AuthForm;

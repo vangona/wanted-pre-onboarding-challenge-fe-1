@@ -1,6 +1,6 @@
 import { API_HOST, METHOD } from '@constants';
 
-interface SignupResponse {
+interface LoginResponse {
   message: string;
   token: string;
 }
@@ -9,12 +9,12 @@ interface ErrorResponse {
   details: string;
 }
 
-const signup = async (
+const login = async (
   email: string,
   password: string,
-): Promise<SignupResponse | ErrorResponse> => {
+): Promise<LoginResponse | ErrorResponse> => {
   const url = new URL(API_HOST);
-  url.pathname = 'users/create';
+  url.pathname = 'users/login';
 
   const result = await fetch(url, {
     method: METHOD.POST,
@@ -27,11 +27,7 @@ const signup = async (
     }),
   });
 
-  if (result.status < 300 && result.status >= 200) {
-    return result.json();
-  }
-
   return result.json();
 };
 
-export default signup;
+export default login;

@@ -38,7 +38,7 @@
       }
     ],
     "no-var": "error",
-    "no-console": "error",
+    "no-console": "warn",
     "prettier/prettier": "warn",
     "linebreak-style": ["error", "unix"],
     "quotes": ["error", "single"],

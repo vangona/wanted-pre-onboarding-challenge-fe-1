@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import signup from '@apis/signup';
 import * as Styled from '../../styles/auth/AuthForm.style';
 import checkIsValidEmail from '../../utils/checkIsValidEmail';
 import checkIsValidPassword from '../../utils/checkIsValidPassword';
@@ -25,9 +26,17 @@ const RegisterForm = () => {
     setRepassword(target.value);
   };
 
-  const handleSubmit: React.FormEventHandler = (event) => {
+  const handleSubmit: React.FormEventHandler = async (event) => {
     event.preventDefault();
+    setError('');
     if (password !== repassword) setError('비밀번호가 다릅니다.');
+
+    const result = await signup(email, password);
+    if ('details' in result) {
+      setError(result.details);
+    } else {
+      alert(result.message);
+    }
   };
 
   useEffect(() => {

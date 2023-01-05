@@ -27,6 +27,7 @@
     "camelcase": "error",
     "prefer-const": "error",
     "prefer-arrow-callback": "error",
+    "no-unused-vars": "warn",
     "no-nested-ternary": "error",
     "no-use-before-define": [
       "error",

@@ -1,4 +1,4 @@
-import { API_HOST } from '../common/constants';
+import { API_HOST } from '@constants';
 
 interface SignupResponse {
   message: string;

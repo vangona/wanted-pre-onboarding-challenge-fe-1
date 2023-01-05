@@ -2,12 +2,13 @@
   "compilerOptions": {
     "baseUrl": "./",
     "paths": {
-      "@public/*": ["./public/*"],
-      "@apis/*": ["./src/apis/*"],
-      "@routes/*": ["./src/routes/*"],
-      "@components/*": ["./src/components/*"],
-      "@styles": ["./src/styles/*"],
-      "@hooks/*": ["./src/hooks/*"]
+      "@apis/*": ["src/apis/*"],
+      "@routes/*": ["src/routes/*"],
+      "@styles/*": ["src/styles/*"],
+      "@utils/*": ["src/utils/*"],
+      "@components/*": ["src/components/*"],
+      "@hooks/*": ["src/hooks/*"],
+      "@constants": ["src/common/constants"]
     }
   }
 }

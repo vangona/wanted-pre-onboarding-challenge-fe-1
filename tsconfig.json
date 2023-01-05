@@ -18,6 +18,6 @@
     "jsx": "react-jsx",
     "incremental": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/styles/auth/PasswordInput.style tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]
 }

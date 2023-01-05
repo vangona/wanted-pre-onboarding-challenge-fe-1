@@ -20,6 +20,7 @@ const Auth = ({ userToken }: AuthProps) => {
   useEffect(() => {
     if (checkIsValidToken(userToken)) {
       navigate('/');
+      return;
     }
   }, [userToken, navigate]);
 

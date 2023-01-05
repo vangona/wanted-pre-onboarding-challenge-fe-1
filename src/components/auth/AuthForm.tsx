@@ -1,14 +1,18 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import login from '@apis/login';
 import signup from '@apis/signup';
 import * as Styled from '@styles/auth/AuthForm.style';
 import checkIsValidEmail from '@utils/checkIsValidEmail';
 import checkIsValidPassword from '@utils/checkIsValidPassword';
+import { LOCALSTORAGE_TOKEN_KEY } from '@constants';
 
 interface AuthFormProps {
   isRegister: boolean;
 }
 
 const AuthForm = ({ isRegister }: AuthFormProps) => {
+  const navigate = useNavigate();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [repassword, setRepassword] = useState('');
@@ -30,17 +34,40 @@ const AuthForm = ({ isRegister }: AuthFormProps) => {
     setRepassword(target.value);
   };
 
+  const handleLogin: React.FormEventHandler = async (event) => {
+    event.preventDefault();
+    setError('');
+
+    const result = await login(email, password);
+
+    if ('details' in result) {
+      setError(result.details);
+    } else {
+      localStorage.setItem(LOCALSTORAGE_TOKEN_KEY, result.token);
+      navigate(0); // reload를 통해서 루트 경로로 이동
+      alert(result.message);
+    }
+
+    setEmail('');
+    setPassword('');
+  };
+
   const handleRegister: React.FormEventHandler = async (event) => {
     event.preventDefault();
     setError('');
     if (password !== repassword) setError('비밀번호가 다릅니다.');
 
     const result = await signup(email, password);
+
     if ('details' in result) {
       setError(result.details);
     } else {
       alert(result.message);
     }
+
+    setEmail('');
+    setPassword('');
+    setRepassword('');
   };
 
   useEffect(() => {
@@ -52,7 +79,7 @@ const AuthForm = ({ isRegister }: AuthFormProps) => {
   }, [email, password]);
 
   return (
-    <Styled.Form onSubmit={handleRegister}>
+    <Styled.Form onSubmit={isRegister ? handleRegister : handleLogin}>
       <Styled.Box>
         <Styled.Label>이메일 : </Styled.Label>
         <Styled.EmailInput

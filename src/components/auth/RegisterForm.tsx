@@ -1,23 +1,25 @@
 import React from 'react';
+import EmailInput from '@components/auth/EmailInput';
+import PasswordInput from '@components/auth/PasswordInput';
 import * as Styled from '../../styles/auth/AuthForm.style';
 
 const RegisterForm = () => {
   return (
-    <Styled.Container>
+    <Styled.Form>
       <Styled.Box>
         <Styled.Label>이메일 : </Styled.Label>
-        <Styled.EmailInput />
+        <EmailInput />
       </Styled.Box>
       <Styled.Box>
         <Styled.Label>비밀번호 : </Styled.Label>
-        <Styled.PasswordInput />
+        <PasswordInput />
       </Styled.Box>
       <Styled.Box>
         <Styled.Label>비밀번호 확인 : </Styled.Label>
-        <Styled.PasswordInput />
+        <PasswordInput />
       </Styled.Box>
       <Styled.SubmitButton>회원가입하기</Styled.SubmitButton>
-    </Styled.Container>
+    </Styled.Form>
   );
 };
 

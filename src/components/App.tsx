@@ -4,7 +4,6 @@ import { createBrowserRouter } from 'react-router-dom';
 import useToken from '@hooks/useToken';
 import Auth from '@routes/Auth';
 import Home from '@routes/Home';
-import Todos from '@routes/Todos';
 
 const App = () => {
   const userToken = useToken();
@@ -14,7 +13,6 @@ const App = () => {
       <>
         <Route path='/' element={<Home userToken={userToken} />} />
         <Route path='/auth' element={<Auth userToken={userToken} />} />
-        <Route path='/todos' element={<Todos userToken={userToken} />} />
       </>,
     ),
   );

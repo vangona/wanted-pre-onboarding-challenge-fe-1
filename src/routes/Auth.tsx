@@ -1,10 +1,20 @@
-import React from 'react';
-import styled from 'styled-components';
-
-const Container = styled.div``;
+import React, { useState } from 'react';
+import AuthLayout from '@components/auth/AuthLayout';
+import LoginForm from '@components/auth/LoginForm';
+import RegisterForm from '@components/auth/RegisterForm';
 
 const Auth = () => {
-  return <Container>Auth</Container>;
+  const [isRegister, setIsRegister] = useState(false);
+
+  const toggleRegister = () => {
+    setIsRegister((prev) => !prev);
+  };
+
+  return (
+    <AuthLayout isRegister={isRegister} toggleIsRegister={toggleRegister}>
+      {isRegister ? <RegisterForm /> : <LoginForm />}
+    </AuthLayout>
+  );
 };
 
 export default Auth;

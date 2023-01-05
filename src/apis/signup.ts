@@ -16,7 +16,7 @@ const signup = async (
   const url = new URL(API_HOST);
   url.pathname = 'users/create';
 
-  const result = await fetch(url, {
+  const response = await fetch(url, {
     method: METHOD.POST,
     headers: {
       'Content-Type': 'application/json',
@@ -27,11 +27,11 @@ const signup = async (
     }),
   });
 
-  if (result.status < 300 && result.status >= 200) {
-    return result.json();
+  if (response.status < 300 && response.status >= 200) {
+    return response.json();
   }
 
-  return result.json();
+  return response.json();
 };
 
 export default signup;

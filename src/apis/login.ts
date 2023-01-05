@@ -16,7 +16,7 @@ const login = async (
   const url = new URL(API_HOST);
   url.pathname = 'users/login';
 
-  const result = await fetch(url, {
+  const response = await fetch(url, {
     method: METHOD.POST,
     headers: {
       'Content-Type': 'application/json',
@@ -27,7 +27,7 @@ const login = async (
     }),
   });
 
-  return result.json();
+  return response.json();
 };
 
 export default login;

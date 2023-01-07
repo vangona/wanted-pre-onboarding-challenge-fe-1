@@ -5,9 +5,14 @@ import type { Todo } from '#types/TodoTypes';
 interface ListSectionProps {
   todos: Todo[];
   handleClickTodo: (newTodo: Todo) => void;
+  openModal: () => void;
 }
 
-const ListSection = ({ todos, handleClickTodo }: ListSectionProps) => {
+const ListSection = ({
+  todos,
+  handleClickTodo,
+  openModal,
+}: ListSectionProps) => {
   return (
     <Styled.Section>
       <Styled.List>
@@ -16,6 +21,7 @@ const ListSection = ({ todos, handleClickTodo }: ListSectionProps) => {
             {todo.title}
           </Styled.ListItem>
         ))}
+        <Styled.AddButton onClick={openModal}>추가하기</Styled.AddButton>
       </Styled.List>
     </Styled.Section>
   );

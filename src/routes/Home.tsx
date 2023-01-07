@@ -14,22 +14,11 @@ interface HomeProps {
 const Home = ({ userToken }: HomeProps) => {
   const navigate = useNavigate();
   const [todo, setTodo] = useState<Todo | null>(null);
-  const [todos, setTodos] = useState<Todo[]>([
-    {
-      title: '꿀잠',
-      content: '안녕히 주무세용',
-      id: '1',
-      createdAt: '2022-07-24T14:15:55.537Z',
-      updatedAt: '2022-07-24T14:15:55.537Z',
-    },
-    {
-      title: '뀨',
-      content: '다음 할 일',
-      id: '2',
-      createdAt: '2022-07-24T14:15:55.537Z',
-      updatedAt: '2022-07-24T14:15:55.537Z',
-    },
-  ]);
+  const [todos, setTodos] = useState<Todo[]>([]);
+
+  const handleClickTodo = (newTodo: Todo) => {
+    setTodo(newTodo);
+  };
 
   useEffect(() => {
     if (!checkIsValidToken(userToken)) {
@@ -54,8 +43,7 @@ const Home = ({ userToken }: HomeProps) => {
 
   return (
     <HomeLayout>
-      {userToken}
-      <ListSection todos={todos} />
+      <ListSection todos={todos} handleClickTodo={handleClickTodo} />
       {todo && <DetailSection todo={todo} />}
     </HomeLayout>
   );

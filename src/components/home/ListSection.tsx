@@ -4,14 +4,17 @@ import type { Todo } from '#types/TodoTypes';
 
 interface ListSectionProps {
   todos: Todo[];
+  handleClickTodo: (newTodo: Todo) => void;
 }
 
-const ListSection = ({ todos }: ListSectionProps) => {
+const ListSection = ({ todos, handleClickTodo }: ListSectionProps) => {
   return (
     <Styled.Section>
       <Styled.List>
         {todos.map((todo) => (
-          <Styled.ListItem key={todo.id}>{todo.title}</Styled.ListItem>
+          <Styled.ListItem onClick={() => handleClickTodo(todo)} key={todo.id}>
+            {todo.title}
+          </Styled.ListItem>
         ))}
       </Styled.List>
     </Styled.Section>

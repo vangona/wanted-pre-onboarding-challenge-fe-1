@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import createTodo from '@apis/createTodo';
 import useToken from '@hooks/useToken';
-import * as Styled from '@styles/common/AddTodoModal.style';
+import * as Styled from '@styles/home/AddTodoModal.style';
 import type { Todo } from '#types/TodoTypes';
 
 interface AddTodoModalProps {

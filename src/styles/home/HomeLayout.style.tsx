@@ -1,3 +1,5 @@
 import styled from 'styled-components';
 
-export const Layout = styled.div``;
+export const Layout = styled.div`
+  display: flex;
+`;

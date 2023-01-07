@@ -4,6 +4,7 @@ import { createBrowserRouter } from 'react-router-dom';
 import useToken from '@hooks/useToken';
 import Auth from '@routes/Auth';
 import Home from '@routes/Home';
+import { Reset } from 'styled-reset';
 
 const App = () => {
   const userToken = useToken();
@@ -17,7 +18,12 @@ const App = () => {
     ),
   );
 
-  return <RouterProvider router={router} />;
+  return (
+    <>
+      <Reset />
+      <RouterProvider router={router} />
+    </>
+  );
 };
 
 export default App;

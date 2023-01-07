@@ -1,4 +1,5 @@
 import React from 'react';
+import * as Styled from '@styles/home/DetailSection.style';
 import { Todo } from '#types/TodoTypes';
 
 interface DetailSectionProps {
@@ -6,7 +7,12 @@ interface DetailSectionProps {
 }
 
 const DetailSection = ({ todo }: DetailSectionProps) => {
-  return <div>{todo.title}</div>;
+  return (
+    <Styled.Section>
+      <Styled.Title>{todo.title}</Styled.Title>
+      <Styled.Content>{todo.content}</Styled.Content>
+    </Styled.Section>
+  );
 };
 
 export default DetailSection;

@@ -1,3 +1,4 @@
+// API
 export const API_HOST = 'http://localhost:8080';
 export const LOCALSTORAGE_TOKEN_KEY = 'wanted_todo';
 export const METHOD = {
@@ -6,3 +7,14 @@ export const METHOD = {
   PUT: 'PUT',
   DELETE: 'DELETE',
 } as const;
+
+// Styles
+export const HOME_STYLE = {
+  LIST_SECTION_WIDTH: '200px',
+  SECTION_PADDING: '10px',
+};
+
+export const Z_INDEX = {
+  MODAL: 99,
+  MODAL_DIMMER: 9,
+};

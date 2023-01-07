@@ -1,13 +1,17 @@
 import React, { useState } from 'react';
+import createTodo from '@apis/createTodo';
+import useToken from '@hooks/useToken';
 import * as Styled from '@styles/common/AddTodoModal.style';
 
 interface AddTodoModalProps {
-  onClose: () => void;
+  closeModal: () => void;
 }
 
-const AddTodoModal = ({ onClose }: AddTodoModalProps) => {
+const AddTodoModal = ({ closeModal }: AddTodoModalProps) => {
+  const token = useToken();
   const [todoTitle, setTodoTitle] = useState<string>('');
   const [todoContent, setTodoContent] = useState<string>('');
+  const [error, setError] = useState('');
 
   const handleChangeTodoTitle: React.ChangeEventHandler = (e) => {
     const target = e.target as HTMLInputElement;
@@ -19,9 +23,17 @@ const AddTodoModal = ({ onClose }: AddTodoModalProps) => {
     setTodoContent(target.value);
   };
 
-  const handleSubmit: React.FormEventHandler = (e) => {
+  const handleSubmit: React.FormEventHandler = async (e) => {
     e.preventDefault();
-    console.log(todoContent, todoTitle);
+    setError('');
+    const response = await createTodo(todoTitle, todoContent, token);
+
+    if ('details' in response) {
+      setError(response.details);
+    } else {
+      alert(`할 일이 성공적으로 추가되었습니다! ${response.data.title}`);
+      closeModal();
+    }
   };
 
   return (
@@ -44,9 +56,10 @@ const AddTodoModal = ({ onClose }: AddTodoModalProps) => {
             onChange={handleChangeTodoContent}
           />
         </Styled.Box>
+        {error && <Styled.Error>{error}</Styled.Error>}
         <Styled.SubmitButton>제출하기</Styled.SubmitButton>
       </Styled.Form>
-      <Styled.CloseButton onClick={onClose}>x</Styled.CloseButton>
+      <Styled.CloseButton onClick={closeModal}>x</Styled.CloseButton>
     </Styled.Container>
   );
 };

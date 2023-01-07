@@ -59,7 +59,7 @@ const Home = ({ userToken }: HomeProps) => {
       {todo && <DetailSection todo={todo} />}
       {isModalOpen && (
         <ModalPortal>
-          <AddTodoModal onClose={closeModal} />
+          <AddTodoModal closeModal={closeModal} />
           <ModalDimmer closeModal={closeModal} />
         </ModalPortal>
       )}

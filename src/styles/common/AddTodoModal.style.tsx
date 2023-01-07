@@ -34,6 +34,9 @@ export const Box = styled.div`
 export const Label = styled.label``;
 export const TitleInput = styled.input``;
 export const ContentInput = styled.input``;
+
+export const Error = styled.div``;
+
 export const SubmitButton = styled.button`
   align-self: center;
 `;

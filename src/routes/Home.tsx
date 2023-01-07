@@ -30,6 +30,11 @@ const Home = ({ userToken }: HomeProps) => {
     setIsModalOpen(false);
   };
 
+  // TODO: React Query Mutation으로 리팩토링하기
+  const handleAddTodoEffect = (newTodoItem: Todo) => {
+    setTodos([...todos, newTodoItem]);
+  };
+
   const handleEditTodoEffect = (edittedTodoItem: Todo) => {
     const edittedTodos = todos.map((todoItem) => {
       if (todoItem.id !== edittedTodoItem.id) return todoItem;
@@ -38,9 +43,9 @@ const Home = ({ userToken }: HomeProps) => {
     setTodos(edittedTodos);
   };
 
-  // TODO: React Query Mutation으로 리팩토링하기
-  const handleAddTodoEffect = (newTodoItem: Todo) => {
-    setTodos([...todos, newTodoItem]);
+  const handleDeleteTodoEffect = (id: string) => {
+    const filteredTodos = todos.filter((todoItem) => todoItem.id !== id);
+    setTodos(filteredTodos);
   };
 
   useEffect(() => {
@@ -74,6 +79,7 @@ const Home = ({ userToken }: HomeProps) => {
         todos={todos}
         handleClickTodo={handleClickTodo}
         openModal={() => setIsModalOpen(true)}
+        handleDeleteTodoEffect={handleDeleteTodoEffect}
       />
       {todo && (
         <DetailSection

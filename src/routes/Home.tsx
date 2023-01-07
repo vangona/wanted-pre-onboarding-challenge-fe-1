@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import getTodos from '@apis/getTodos';
-import AddTodoModal from '@components/home/AddTodoModal';
 import ModalDimmer from '@components/common/ModalDimmer';
 import ModalPortal from '@components/common/ModalPortal';
+import AddTodoModal from '@components/home/AddTodoModal';
 import DetailSection from '@components/home/DetailSection';
 import HomeLayout from '@components/home/HomeLayout';
 import ListSection from '@components/home/ListSection';
@@ -28,6 +28,14 @@ const Home = ({ userToken }: HomeProps) => {
 
   const closeModal = () => {
     setIsModalOpen(false);
+  };
+
+  const handleEditTodoEffect = (edittedTodoItem: Todo) => {
+    const edittedTodos = todos.map((todoItem) => {
+      if (todoItem.id !== edittedTodoItem.id) return todoItem;
+      return edittedTodoItem;
+    });
+    setTodos(edittedTodos);
   };
 
   // TODO: React Query Mutation으로 리팩토링하기
@@ -67,7 +75,12 @@ const Home = ({ userToken }: HomeProps) => {
         handleClickTodo={handleClickTodo}
         openModal={() => setIsModalOpen(true)}
       />
-      {todo && <DetailSection todo={todo} />}
+      {todo && (
+        <DetailSection
+          todo={todo}
+          handleEditTodoEffect={handleEditTodoEffect}
+        />
+      )}
       {isModalOpen && (
         <ModalPortal>
           <AddTodoModal

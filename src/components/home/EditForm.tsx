@@ -1,13 +1,21 @@
 import React, { useState } from 'react';
+import updateTodo from '@apis/updateTodo';
+import useToken from '@hooks/useToken';
 import * as Styled from '@styles/home/EditForm.style';
 import type { Todo } from '#types/TodoTypes';
 
 interface EditFormProps {
   todo: Todo;
-  handleFormEffect: () => void;
+  handleEditTodoEffect: (edittedTodoItem: Todo) => void;
+  closeEditMode: () => void;
 }
 
-const EditForm = ({ todo, handleFormEffect }: EditFormProps) => {
+const EditForm = ({
+  todo,
+  handleEditTodoEffect,
+  closeEditMode,
+}: EditFormProps) => {
+  const token = useToken();
   const [todoTitle, setTodoTitle] = useState<string>(todo.title);
   const [todoContent, setTodoContent] = useState<string>(todo.content);
 
@@ -21,10 +29,19 @@ const EditForm = ({ todo, handleFormEffect }: EditFormProps) => {
     setTodoContent(target.value);
   };
 
-  const handleSubmit: React.FormEventHandler = (e) => {
+  const handleSubmit: React.FormEventHandler = async (e) => {
     e.preventDefault();
-    handleFormEffect();
+    closeEditMode();
     if (todo.title === todoTitle && todo.content === todoContent) return;
+
+    const response = await updateTodo(todo.id, todoTitle, todoContent, token);
+
+    if ('details' in response) {
+      alert(`수정 중 문제가 발생했습니다. ${response.details}`);
+    } else {
+      alert(`할 일이 성공적으로 변경되었습니다! ${response.data.title}`);
+      handleEditTodoEffect(response.data);
+    }
   };
 
   return (

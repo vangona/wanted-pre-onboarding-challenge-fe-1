@@ -30,6 +30,11 @@ const Home = ({ userToken }: HomeProps) => {
     setIsModalOpen(false);
   };
 
+  // TODO: React Query Mutation으로 리팩토링하기
+  const handleAddTodoEffect = (newTodoItem: Todo) => {
+    setTodos([...todos, newTodoItem]);
+  };
+
   useEffect(() => {
     if (!userToken) return;
     if (!checkIsValidToken(userToken)) {
@@ -65,7 +70,10 @@ const Home = ({ userToken }: HomeProps) => {
       {todo && <DetailSection todo={todo} />}
       {isModalOpen && (
         <ModalPortal>
-          <AddTodoModal closeModal={closeModal} />
+          <AddTodoModal
+            closeModal={closeModal}
+            handleAddTodoEffect={handleAddTodoEffect}
+          />
           <ModalDimmer closeModal={closeModal} />
         </ModalPortal>
       )}

@@ -2,12 +2,17 @@ import React, { useState } from 'react';
 import createTodo from '@apis/createTodo';
 import useToken from '@hooks/useToken';
 import * as Styled from '@styles/common/AddTodoModal.style';
+import type { Todo } from '#types/TodoTypes';
 
 interface AddTodoModalProps {
   closeModal: () => void;
+  handleAddTodoEffect: (newTodoItem: Todo) => void;
 }
 
-const AddTodoModal = ({ closeModal }: AddTodoModalProps) => {
+const AddTodoModal = ({
+  closeModal,
+  handleAddTodoEffect,
+}: AddTodoModalProps) => {
   const token = useToken();
   const [todoTitle, setTodoTitle] = useState<string>('');
   const [todoContent, setTodoContent] = useState<string>('');
@@ -32,6 +37,7 @@ const AddTodoModal = ({ closeModal }: AddTodoModalProps) => {
       setError(response.details);
     } else {
       alert(`할 일이 성공적으로 추가되었습니다! ${response.data.title}`);
+      handleAddTodoEffect(response.data);
       closeModal();
     }
   };

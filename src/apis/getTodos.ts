@@ -1,15 +1,8 @@
 import { API_HOST } from '@constants';
-
-type TodoData = {
-  title: string;
-  content: string;
-  id: string;
-  createdAt: string;
-  updatedAt: string;
-};
+import type { Todo } from '#types/TodoTypes';
 
 interface GetTodosResponse {
-  data: TodoData[];
+  data: Todo[];
 }
 
 interface ErrorResponse {

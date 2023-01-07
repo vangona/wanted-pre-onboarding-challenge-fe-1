@@ -13,12 +13,21 @@ const ListSection = ({
   handleClickTodo,
   openModal,
 }: ListSectionProps) => {
+  const handleClickDeleteTodo = (todo: Todo) => {
+    console.log(todo.id);
+  };
+
   return (
     <Styled.Section>
       <Styled.List>
         {todos.map((todo) => (
-          <Styled.ListItem onClick={() => handleClickTodo(todo)} key={todo.id}>
-            {todo.title}
+          <Styled.ListItem key={todo.id}>
+            <Styled.TodoTitle onClick={() => handleClickTodo(todo)}>
+              {todo.title}
+            </Styled.TodoTitle>
+            <Styled.DeleteButton onClick={() => handleClickDeleteTodo(todo)}>
+              삭제하기
+            </Styled.DeleteButton>
           </Styled.ListItem>
         ))}
         <Styled.AddButton onClick={openModal}>추가하기</Styled.AddButton>

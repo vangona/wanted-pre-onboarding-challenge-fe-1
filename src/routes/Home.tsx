@@ -6,15 +6,13 @@ import ModalPortal from '@components/common/ModalPortal';
 import AddTodoModal from '@components/home/AddTodoModal';
 import DetailSection from '@components/home/DetailSection';
 import HomeLayout from '@components/home/HomeLayout';
-import ListSection from '@components/home/ListSection';
+import TodoListSection from '@components/home/TodoListSection';
+import useToken from '@hooks/useToken';
 import checkIsValidToken from '@utils/checkIsValidToken';
 import type { Todo } from '#types/TodoTypes';
 
-interface HomeProps {
-  userToken: string;
-}
-
-const Home = ({ userToken }: HomeProps) => {
+const Home = () => {
+  const userToken = useToken();
   const navigate = useNavigate();
   const [searchParams, setSearchParams] = useSearchParams();
   const [todo, setTodo] = useState<Todo | null>(null);
@@ -75,7 +73,7 @@ const Home = ({ userToken }: HomeProps) => {
 
   return (
     <HomeLayout>
-      <ListSection
+      <TodoListSection
         todos={todos}
         handleClickTodo={handleClickTodo}
         openModal={() => setIsModalOpen(true)}

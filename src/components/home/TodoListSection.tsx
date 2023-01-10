@@ -1,22 +1,23 @@
 import React from 'react';
 import deleteTodo from '@apis/deleteTodo';
+import TodoListItem from '@components/home/TodoListItem';
 import useToken from '@hooks/useToken';
 import * as Styled from '@styles/home/ListSection.style';
 import type { Todo } from '#types/TodoTypes';
 
-interface ListSectionProps {
+interface TodoListSectionProps {
   todos: Todo[];
   handleClickTodo: (newTodo: Todo) => void;
   openModal: () => void;
   handleDeleteTodoEffect: (id: string) => void;
 }
 
-const ListSection = ({
+const TodoListSection = ({
   todos,
   handleClickTodo,
   openModal,
   handleDeleteTodoEffect,
-}: ListSectionProps) => {
+}: TodoListSectionProps) => {
   const token = useToken();
   const handleClickDeleteTodo = async (id: string) => {
     const response = await deleteTodo(id, token);
@@ -33,19 +34,12 @@ const ListSection = ({
     <Styled.Section>
       <Styled.List>
         {todos.map((todo) => (
-          <Styled.ListItem key={todo.id}>
-            <Styled.TodoTitle onClick={() => handleClickTodo(todo)}>
-              {todo.title}
-            </Styled.TodoTitle>
-            <Styled.DeleteButton
-              onClick={() =>
-                window.confirm('삭제하시겠습니까?') &&
-                handleClickDeleteTodo(todo.id)
-              }
-            >
-              삭제하기
-            </Styled.DeleteButton>
-          </Styled.ListItem>
+          <TodoListItem
+            key={todo.id}
+            todo={todo}
+            handleClickTodo={handleClickTodo}
+            handleClickDeleteTodo={handleClickDeleteTodo}
+          />
         ))}
         <Styled.AddButton onClick={openModal}>추가하기</Styled.AddButton>
       </Styled.List>
@@ -53,4 +47,4 @@ const ListSection = ({
   );
 };
 
-export default ListSection;
+export default TodoListSection;

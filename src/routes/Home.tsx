@@ -3,9 +3,9 @@ import { useNavigate, useSearchParams } from 'react-router-dom';
 import getTodos from '@apis/getTodos';
 import ModalDimmer from '@components/common/ModalDimmer';
 import ModalPortal from '@components/common/ModalPortal';
-import AddTodoModal from '@components/home/AddTodoModal';
-import DetailSection from '@components/home/DetailSection';
 import HomeLayout from '@components/home/HomeLayout';
+import TodoAddModal from '@components/home/TodoAddModal';
+import TodoDetailSection from '@components/home/TodoDetailSection';
 import TodoListSection from '@components/home/TodoListSection';
 import useToken from '@hooks/useToken';
 import checkIsValidToken from '@utils/checkIsValidToken';
@@ -80,14 +80,14 @@ const Home = () => {
         handleDeleteTodoEffect={handleDeleteTodoEffect}
       />
       {todo && (
-        <DetailSection
+        <TodoDetailSection
           todo={todo}
           handleEditTodoEffect={handleEditTodoEffect}
         />
       )}
       {isModalOpen && (
         <ModalPortal>
-          <AddTodoModal
+          <TodoAddModal
             closeModal={closeModal}
             handleAddTodoEffect={handleAddTodoEffect}
           />

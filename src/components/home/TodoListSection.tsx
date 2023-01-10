@@ -2,7 +2,7 @@ import React from 'react';
 import deleteTodo from '@apis/deleteTodo';
 import TodoListItem from '@components/home/TodoListItem';
 import useToken from '@hooks/useToken';
-import * as Styled from '@styles/home/ListSection.style';
+import * as Styled from '@styles/home/TodoListSection.style';
 import type { Todo } from '#types/TodoTypes';
 
 interface TodoListSectionProps {

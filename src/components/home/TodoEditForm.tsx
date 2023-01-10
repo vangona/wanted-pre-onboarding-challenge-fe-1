@@ -1,20 +1,20 @@
 import React, { useState } from 'react';
 import updateTodo from '@apis/updateTodo';
 import useToken from '@hooks/useToken';
-import * as Styled from '@styles/home/EditForm.style';
+import * as Styled from '@styles/home/TodoEditForm.style';
 import type { Todo } from '#types/TodoTypes';
 
-interface EditFormProps {
+interface TodoEditFormProps {
   todo: Todo;
   handleEditTodoEffect: (edittedTodoItem: Todo) => void;
   closeEditMode: () => void;
 }
 
-const EditForm = ({
+const TodoEditForm = ({
   todo,
   handleEditTodoEffect,
   closeEditMode,
-}: EditFormProps) => {
+}: TodoEditFormProps) => {
   const token = useToken();
   const [todoTitle, setTodoTitle] = useState<string>(todo.title);
   const [todoContent, setTodoContent] = useState<string>(todo.content);
@@ -61,4 +61,4 @@ const EditForm = ({
   );
 };
 
-export default EditForm;
+export default TodoEditForm;

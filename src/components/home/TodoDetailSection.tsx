@@ -1,21 +1,24 @@
 import React, { useState } from 'react';
-import * as Styled from '@styles/home/DetailSection.style';
-import EditForm from './EditForm';
-import TodoDetail from './TodoDetail';
+import TodoDetail from '@components/home/TodoDetailItem';
+import TodoEditForm from '@components/home/TodoEditForm';
+import * as Styled from '@styles/home/TodoDetailSection.style';
 import { Todo } from '#types/TodoTypes';
 
-interface DetailSectionProps {
+interface TodoDetailSectionProps {
   todo: Todo;
   handleEditTodoEffect: (edittedTodo: Todo) => void;
 }
 
-const DetailSection = ({ todo, handleEditTodoEffect }: DetailSectionProps) => {
+const TodoDetailSection = ({
+  todo,
+  handleEditTodoEffect,
+}: TodoDetailSectionProps) => {
   const [isEditMode, setIsEditMode] = useState<boolean>(false);
 
   return (
     <Styled.Section>
       {isEditMode ? (
-        <EditForm
+        <TodoEditForm
           todo={todo}
           handleEditTodoEffect={handleEditTodoEffect}
           closeEditMode={() => setIsEditMode(false)}
@@ -27,4 +30,4 @@ const DetailSection = ({ todo, handleEditTodoEffect }: DetailSectionProps) => {
   );
 };
 
-export default DetailSection;
+export default TodoDetailSection;

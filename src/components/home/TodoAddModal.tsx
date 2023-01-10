@@ -1,18 +1,18 @@
 import React, { useState } from 'react';
 import createTodo from '@apis/createTodo';
 import useToken from '@hooks/useToken';
-import * as Styled from '@styles/home/AddTodoModal.style';
+import * as Styled from '@styles/home/TodoAddModal.style';
 import type { Todo } from '#types/TodoTypes';
 
-interface AddTodoModalProps {
+interface TodoAddModalProps {
   closeModal: () => void;
   handleAddTodoEffect: (newTodoItem: Todo) => void;
 }
 
-const AddTodoModal = ({
+const TodoAddModal = ({
   closeModal,
   handleAddTodoEffect,
-}: AddTodoModalProps) => {
+}: TodoAddModalProps) => {
   const token = useToken();
   const [todoTitle, setTodoTitle] = useState<string>('');
   const [todoContent, setTodoContent] = useState<string>('');
@@ -70,4 +70,4 @@ const AddTodoModal = ({
   );
 };
 
-export default AddTodoModal;
+export default TodoAddModal;

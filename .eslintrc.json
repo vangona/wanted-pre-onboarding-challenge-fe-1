@@ -29,7 +29,6 @@
     "camelcase": "error",
     "prefer-const": "error",
     "prefer-arrow-callback": "error",
-    "no-unused-vars": "warn",
     "no-nested-ternary": "error",
     "no-use-before-define": [
       "error",
@@ -40,6 +39,8 @@
         "allowNamedExports": false
       }
     ],
+    "no-unused-vars": "off",
+    "@typescript-eslint/no-unused-vars": "warn",
     "no-var": "error",
     "no-console": "warn",
     "prettier/prettier": "warn",

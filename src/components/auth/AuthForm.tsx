@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import login from '@apis/login';
-import signup from '@apis/signup';
+import apiLogin from '@apis/apiLogin';
+import apiSignup from '@apis/apiSignup';
 import * as Styled from '@styles/auth/AuthForm.style';
 import checkIsValidEmail from '@utils/checkIsValidEmail';
 import checkIsValidPassword from '@utils/checkIsValidPassword';
@@ -38,7 +38,7 @@ const AuthForm = ({ isRegister }: AuthFormProps) => {
     event.preventDefault();
     setError('');
 
-    const result = await login(email, password);
+    const result = await apiLogin(email, password);
 
     if ('details' in result) {
       setError(result.details);
@@ -52,12 +52,12 @@ const AuthForm = ({ isRegister }: AuthFormProps) => {
     setPassword('');
   };
 
-  const handleRegister: React.FormEventHandler = async (event) => {
+  const handleSignup: React.FormEventHandler = async (event) => {
     event.preventDefault();
     setError('');
     if (password !== repassword) setError('비밀번호가 다릅니다.');
 
-    const result = await signup(email, password);
+    const result = await apiSignup(email, password);
 
     if ('details' in result) {
       setError(result.details);
@@ -79,7 +79,7 @@ const AuthForm = ({ isRegister }: AuthFormProps) => {
   }, [email, password]);
 
   return (
-    <Styled.Form onSubmit={isRegister ? handleRegister : handleLogin}>
+    <Styled.Form onSubmit={isRegister ? handleSignup : handleLogin}>
       <Styled.Box>
         <Styled.Label>이메일 : </Styled.Label>
         <Styled.EmailInput

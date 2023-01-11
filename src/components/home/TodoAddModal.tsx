@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import createTodo from '@apis/createTodo';
+import createTodo from '@apis/apiCreateTodo';
 import * as Styled from '@styles/home/TodoAddModal.style';
 import getUserToken from '@utils/getUserToken';
 import type { Todo } from '#types/TodoTypes';

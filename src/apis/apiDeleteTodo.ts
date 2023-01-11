@@ -5,7 +5,7 @@ import type {
 } from '#types/ApiResponseTypes';
 
 // token이 localStorage에 담겨있어서 null일 수 있기 때문에 외부에서 유효성을 체크해서 호출해준다.
-const deleteTodo = async (
+const apiDeleteTodo = async (
   id: string,
   token: string,
 ): Promise<DeleteTodoResponseBody | ErrorResponseBody> => {
@@ -22,4 +22,4 @@ const deleteTodo = async (
   return response.json();
 };
 
-export default deleteTodo;
+export default apiDeleteTodo;

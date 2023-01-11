@@ -1,15 +1,15 @@
 import { API_HOST, METHOD } from '@constants';
 import type {
-  LoginResponseBody,
+  SignupResponseBody,
   ErrorResponseBody,
 } from '#types/ApiResponseTypes';
 
-const login = async (
+const apiSignup = async (
   email: string,
   password: string,
-): Promise<LoginResponseBody | ErrorResponseBody> => {
+): Promise<SignupResponseBody | ErrorResponseBody> => {
   const url = new URL(API_HOST);
-  url.pathname = 'users/login';
+  url.pathname = 'users/create';
 
   const response = await fetch(url, {
     method: METHOD.POST,
@@ -22,7 +22,11 @@ const login = async (
     }),
   });
 
+  if (response.status < 300 && response.status >= 200) {
+    return response.json();
+  }
+
   return response.json();
 };
 
-export default login;
+export default apiSignup;

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
-import getTodos from '@apis/getTodos';
+import getTodos from '@apis/apiGetTodos';
 import ModalDimmer from '@components/common/ModalDimmer';
 import ModalPortal from '@components/common/ModalPortal';
 import HomeLayout from '@components/home/HomeLayout';

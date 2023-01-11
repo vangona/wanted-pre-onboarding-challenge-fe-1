@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import updateTodo from '@apis/updateTodo';
+import apiUpdateTodo from '@apis/apiUpdateTodo';
 import * as Styled from '@styles/home/TodoEditForm.style';
 import getUserToken from '@utils/getUserToken';
 import type { Todo } from '#types/TodoTypes';
@@ -34,7 +34,12 @@ const TodoEditForm = ({
     closeEditMode();
     if (todo.title === todoTitle && todo.content === todoContent) return;
 
-    const response = await updateTodo(todo.id, todoTitle, todoContent, token);
+    const response = await apiUpdateTodo(
+      todo.id,
+      todoTitle,
+      todoContent,
+      token,
+    );
 
     if ('details' in response) {
       alert(`수정 중 문제가 발생했습니다. ${response.details}`);

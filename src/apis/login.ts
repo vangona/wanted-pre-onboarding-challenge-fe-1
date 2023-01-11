@@ -1,10 +1,13 @@
 import { API_HOST, METHOD } from '@constants';
-import type { LoginResponse, ErrorResponse } from '#types/ApiResponseTypes';
+import type {
+  LoginResponseBody,
+  ErrorResponseBody,
+} from '#types/ApiResponseTypes';
 
 const login = async (
   email: string,
   password: string,
-): Promise<LoginResponse | ErrorResponse> => {
+): Promise<LoginResponseBody | ErrorResponseBody> => {
   const url = new URL(API_HOST);
   url.pathname = 'users/login';
 

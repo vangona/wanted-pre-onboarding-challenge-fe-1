@@ -1,31 +1,31 @@
 import type { Todo } from '#types/TodoTypes';
 
-export interface SignupResponse {
+export interface SignupResponseBody {
   message: string;
   token: string;
 }
 
-export interface LoginResponse {
+export interface LoginResponseBody {
   message: string;
   token: string;
 }
 
-export interface CreateTodoResponse {
+export interface CreateTodoResponseBody {
   data: Todo;
 }
 
-export interface GetTodosResponse {
+export interface GetTodosResponseBody {
   data: Todo[];
 }
 
-export interface UpdateTodoResponse {
+export interface UpdateTodoResponseBody {
   data: Todo;
 }
 
-export interface DeleteTodoResponse {
+export interface DeleteTodoResponseBody {
   data: null;
 }
 
-export interface ErrorResponse {
+export interface ErrorResponseBody {
   details: string;
 }

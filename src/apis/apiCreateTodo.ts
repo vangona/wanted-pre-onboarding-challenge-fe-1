@@ -30,7 +30,7 @@ const apiCreateTodo = async (
 
   if (!response.ok || 'details' in responseBody)
     throw new Error(
-      `Error : ${
+      `Todo 추가 중 문제가 발생했습니다. : ${
         'details' in responseBody ? responseBody?.details : response.status
       }`,
     );

@@ -1,15 +1,20 @@
 import React from 'react';
+import { useSearchParams } from 'react-router-dom';
 import useDeleteTodoMutation from '@hooks/mutations/useDeleteTodoMutation';
 import * as Styled from '@styles/home/TodoListItem.style';
 import type { Todo } from '#types/TodoTypes';
 
 interface TodoListItemProps {
   todo: Todo;
-  handleClickTodo: (newTodo: Todo) => void;
 }
 
-const TodoListItem = ({ todo, handleClickTodo }: TodoListItemProps) => {
+const TodoListItem = ({ todo }: TodoListItemProps) => {
+  const setSearchParams = useSearchParams()[1];
   const { mutate: deleteTodo } = useDeleteTodoMutation();
+
+  const handleClickTodo = (todo: Todo) => {
+    setSearchParams({ todo: todo.id });
+  };
 
   return (
     <Styled.ListItem key={todo.id}>

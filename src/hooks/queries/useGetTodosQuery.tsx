@@ -8,6 +8,7 @@ const useGetTodosQuery = () => {
   const { data } = useQuery([REACT_QUERY_KEY.GET_TODOS, token], {
     queryFn: () => apiGetTodos(token),
     enabled: !!token,
+    suspense: true,
   });
 
   return { data };

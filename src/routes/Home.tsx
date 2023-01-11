@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, Suspense } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import ModalDimmer from '@components/common/ModalDimmer';
 import ModalPortal from '@components/common/ModalPortal';
@@ -32,8 +32,12 @@ const Home = () => {
 
   return (
     <HomeLayout>
-      <TodoListSection openModal={() => setIsModalOpen(true)} />
-      {todoResponseBody?.data && <TodoDetailSection />}
+      <Suspense fallback='로딩중...'>
+        <TodoListSection openModal={() => setIsModalOpen(true)} />
+      </Suspense>
+      <Suspense fallback='로딩중...'>
+        {todoResponseBody?.data && <TodoDetailSection />}
+      </Suspense>
       {isModalOpen && (
         <ModalPortal>
           <TodoAddModal closeModal={closeModal} />

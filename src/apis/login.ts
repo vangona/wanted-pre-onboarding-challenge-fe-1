@@ -1,13 +1,5 @@
 import { API_HOST, METHOD } from '@constants';
-
-interface LoginResponse {
-  message: string;
-  token: string;
-}
-
-interface ErrorResponse {
-  details: string;
-}
+import type { LoginResponse, ErrorResponse } from '#types/ApiResponseTypes';
 
 const login = async (
   email: string,

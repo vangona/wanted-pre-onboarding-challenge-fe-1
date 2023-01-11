@@ -1,13 +1,8 @@
 import { API_HOST, METHOD } from '@constants';
-import type { Todo } from '#types/TodoTypes';
-
-interface CreateTodoResponse {
-  data: Todo;
-}
-
-interface ErrorResponse {
-  details: string;
-}
+import type {
+  CreateTodoResponse,
+  ErrorResponse,
+} from '#types/ApiResponseTypes';
 
 // token이 localStorage에 담겨있어서 null일 수 있기 때문에 외부에서 유효성을 체크해서 호출해준다.
 const createTodo = async (

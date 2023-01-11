@@ -1,13 +1,5 @@
 import { API_HOST, METHOD } from '@constants';
-
-interface SignupResponse {
-  message: string;
-  token: string;
-}
-
-interface ErrorResponse {
-  details: string;
-}
+import type { SignupResponse, ErrorResponse } from '#types/ApiResponseTypes';
 
 const signup = async (
   email: string,

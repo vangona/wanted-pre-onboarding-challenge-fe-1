@@ -52,7 +52,7 @@ const useUpdateTodoMutation = () => {
     mutationFn: updateTodo,
     onSuccess: updateTodos,
     onError: (error) => {
-      alert(error);
+      alert(error.message);
     },
   });
 

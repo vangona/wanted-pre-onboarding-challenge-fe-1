@@ -11,25 +11,23 @@ const apiGetTodos = async (
   const url = new URL(API_HOST);
   url.pathname = '/todos';
 
-  try {
-    const response = await fetch(url, {
-      headers: {
-        Authorization: token,
-      },
-    });
+  const response = await fetch(url, {
+    headers: {
+      Authorization: token,
+    },
+  });
 
-    const body: GetTodosResponseBody | ErrorResponseBody =
-      await response.json();
+  const responseBody: GetTodosResponseBody | ErrorResponseBody =
+    await response.json();
 
-    if (!response.ok || 'details' in body)
-      throw new Error(
-        `Error : ${'details' in body ? body?.details : response.status}`,
-      );
+  if (!response.ok || 'details' in responseBody)
+    throw new Error(
+      `Error : ${
+        'details' in responseBody ? responseBody?.details : response.status
+      }`,
+    );
 
-    return body;
-  } catch (e) {
-    alert(e);
-  }
+  return responseBody;
 };
 
 export default apiGetTodos;

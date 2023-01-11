@@ -13,33 +13,29 @@ const apiCreateTodo = async (
   const url = new URL(API_HOST);
   url.pathname = '/todos';
 
-  try {
-    const response = await fetch(url, {
-      method: METHOD.POST,
-      headers: {
-        'Content-Type': 'application/json',
-        Authorization: token,
-      },
-      body: JSON.stringify({
-        title,
-        content,
-      }),
-    });
+  const response = await fetch(url, {
+    method: METHOD.POST,
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: token,
+    },
+    body: JSON.stringify({
+      title,
+      content,
+    }),
+  });
 
-    const responseBody: CreateTodoResponseBody | ErrorResponseBody =
-      await response.json();
+  const responseBody: CreateTodoResponseBody | ErrorResponseBody =
+    await response.json();
 
-    if (!response.ok || 'details' in responseBody)
-      throw new Error(
-        `Error : ${
-          'details' in responseBody ? responseBody?.details : response.status
-        }`,
-      );
+  if (!response.ok || 'details' in responseBody)
+    throw new Error(
+      `Error : ${
+        'details' in responseBody ? responseBody?.details : response.status
+      }`,
+    );
 
-    return responseBody;
-  } catch (e) {
-    alert(e);
-  }
+  return responseBody;
 };
 
 export default apiCreateTodo;

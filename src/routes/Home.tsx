@@ -7,12 +7,12 @@ import HomeLayout from '@components/home/HomeLayout';
 import TodoAddModal from '@components/home/TodoAddModal';
 import TodoDetailSection from '@components/home/TodoDetailSection';
 import TodoListSection from '@components/home/TodoListSection';
-import useToken from '@hooks/useToken';
 import checkIsValidToken from '@utils/checkIsValidToken';
+import getUserToken from '@utils/getUserToken';
 import type { Todo } from '#types/TodoTypes';
 
 const Home = () => {
-  const userToken = useToken();
+  const userToken = getUserToken();
   const navigate = useNavigate();
   const [searchParams, setSearchParams] = useSearchParams();
   const [todo, setTodo] = useState<Todo | null>(null);

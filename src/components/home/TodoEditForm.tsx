@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import updateTodo from '@apis/updateTodo';
-import useToken from '@hooks/useToken';
 import * as Styled from '@styles/home/TodoEditForm.style';
+import getUserToken from '@utils/getUserToken';
 import type { Todo } from '#types/TodoTypes';
 
 interface TodoEditFormProps {
@@ -15,7 +15,7 @@ const TodoEditForm = ({
   handleEditTodoEffect,
   closeEditMode,
 }: TodoEditFormProps) => {
-  const token = useToken();
+  const token = getUserToken();
   const [todoTitle, setTodoTitle] = useState<string>(todo.title);
   const [todoContent, setTodoContent] = useState<string>(todo.content);
 

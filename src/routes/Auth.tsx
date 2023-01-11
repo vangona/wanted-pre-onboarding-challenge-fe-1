@@ -2,12 +2,12 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import AuthForm from '@components/auth/AuthForm';
 import AuthLayout from '@components/auth/AuthLayout';
-import useToken from '@hooks/useToken';
 import * as Styled from '@styles/auth/Auth.style';
 import checkIsValidToken from '@utils/checkIsValidToken';
+import getUserToken from '@utils/getUserToken';
 
 const Auth = () => {
-  const userToken = useToken();
+  const userToken = getUserToken();
   const navigate = useNavigate();
   const [isRegister, setIsRegister] = useState(false);
 

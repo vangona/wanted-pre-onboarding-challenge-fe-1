@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import createTodo from '@apis/createTodo';
-import useToken from '@hooks/useToken';
 import * as Styled from '@styles/home/TodoAddModal.style';
+import getUserToken from '@utils/getUserToken';
 import type { Todo } from '#types/TodoTypes';
 
 interface TodoAddModalProps {
@@ -13,7 +13,7 @@ const TodoAddModal = ({
   closeModal,
   handleAddTodoEffect,
 }: TodoAddModalProps) => {
-  const token = useToken();
+  const token = getUserToken();
   const [todoTitle, setTodoTitle] = useState<string>('');
   const [todoContent, setTodoContent] = useState<string>('');
   const [error, setError] = useState('');

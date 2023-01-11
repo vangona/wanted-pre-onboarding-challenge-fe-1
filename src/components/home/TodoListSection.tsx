@@ -7,6 +7,7 @@ import * as Styled from '@styles/home/TodoListSection.style';
 import { useQuery } from '@tanstack/react-query';
 import { REACT_QUERY_KEY } from '@constants';
 import type { Todo } from '#types/TodoTypes';
+import useGetTodosQuery from '@hooks/queries/useGetTodosQuery';
 
 interface TodoListSectionProps {
   handleClickTodo: (newTodo: Todo) => void;
@@ -20,10 +21,7 @@ const TodoListSection = ({
   handleDeleteTodoEffect,
 }: TodoListSectionProps) => {
   const token = useToken();
-  const { data: todos } = useQuery([REACT_QUERY_KEY.GET_TODOS, token], {
-    queryFn: () => getTodos(token),
-    enabled: !!token,
-  });
+  const { data: todos } = useGetTodosQuery();
 
   const handleClickDeleteTodo = async (id: string) => {
     const response = await deleteTodo(id, token);

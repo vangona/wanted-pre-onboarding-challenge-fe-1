@@ -53,14 +53,8 @@ const Home = () => {
       return;
     }
 
-    getTodos(userToken).then((res) => {
-      if ('details' in res) {
-        // 에러가 발생현 경우 early return
-        alert(res.details);
-
-        return;
-      }
-      setTodos(res.data);
+    getTodos(userToken).then((response) => {
+      response && setTodos(response.data);
     });
   }, [userToken, navigate]);
 
@@ -74,7 +68,6 @@ const Home = () => {
   return (
     <HomeLayout>
       <TodoListSection
-        todos={todos}
         handleClickTodo={handleClickTodo}
         openModal={() => setIsModalOpen(true)}
         handleDeleteTodoEffect={handleDeleteTodoEffect}

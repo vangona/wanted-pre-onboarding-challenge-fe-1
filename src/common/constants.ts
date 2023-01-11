@@ -8,6 +8,11 @@ export const METHOD = {
   DELETE: 'DELETE',
 } as const;
 
+// React Query
+export const REACT_QUERY_KEY = {
+  GET_TODOS: 'todos',
+} as const;
+
 // Styles
 export const HOME_STYLE = {
   LIST_SECTION_WIDTH: '200px',

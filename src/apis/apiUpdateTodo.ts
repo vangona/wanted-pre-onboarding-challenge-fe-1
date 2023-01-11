@@ -10,23 +10,37 @@ const apiUpdateTodo = async (
   title: string,
   content: string,
   token: string,
-): Promise<UpdateTodoResponseBody | ErrorResponseBody> => {
+): Promise<UpdateTodoResponseBody | undefined> => {
   const url = new URL(API_HOST);
   url.pathname = `/todos/${id}`;
 
-  const response = await fetch(url, {
-    method: METHOD.PUT,
-    headers: {
-      'Content-Type': 'application/json',
-      Authorization: token,
-    },
-    body: JSON.stringify({
-      title,
-      content,
-    }),
-  });
+  try {
+    const response = await fetch(url, {
+      method: METHOD.PUT,
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: token,
+      },
+      body: JSON.stringify({
+        title,
+        content,
+      }),
+    });
 
-  return response.json();
+    const responseBody: UpdateTodoResponseBody | ErrorResponseBody =
+      await response.json();
+
+    if (!response.ok || 'details' in responseBody)
+      throw new Error(
+        `Error : ${
+          'details' in responseBody ? responseBody?.details : response.status
+        }`,
+      );
+
+    return responseBody;
+  } catch (e) {
+    alert(e);
+  }
 };
 
 export default apiUpdateTodo;

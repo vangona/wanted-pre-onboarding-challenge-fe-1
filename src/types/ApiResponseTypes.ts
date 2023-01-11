@@ -14,6 +14,9 @@ export interface CreateTodoResponseBody {
   data: Todo;
 }
 
+export interface GetTodoByIdResponseBody {
+  data: Todo;
+}
 export interface GetTodosResponseBody {
   data: Todo[];
 }

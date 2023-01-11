@@ -28,19 +28,6 @@ const Home = () => {
     setIsModalOpen(false);
   };
 
-  // TODO: React Query Mutation으로 리팩토링하기
-  const handleAddTodoEffect = (newTodoItem: Todo) => {
-    setTodos([...todos, newTodoItem]);
-  };
-
-  const handleEditTodoEffect = (edittedTodoItem: Todo) => {
-    const edittedTodos = todos.map((todoItem) => {
-      if (todoItem.id !== edittedTodoItem.id) return todoItem;
-      return edittedTodoItem;
-    });
-    setTodos(edittedTodos);
-  };
-
   const handleDeleteTodoEffect = (id: string) => {
     const filteredTodos = todos.filter((todoItem) => todoItem.id !== id);
     setTodos(filteredTodos);
@@ -72,18 +59,10 @@ const Home = () => {
         openModal={() => setIsModalOpen(true)}
         handleDeleteTodoEffect={handleDeleteTodoEffect}
       />
-      {todo && (
-        <TodoDetailSection
-          todo={todo}
-          handleEditTodoEffect={handleEditTodoEffect}
-        />
-      )}
+      {todo && <TodoDetailSection todo={todo} />}
       {isModalOpen && (
         <ModalPortal>
-          <TodoAddModal
-            closeModal={closeModal}
-            handleAddTodoEffect={handleAddTodoEffect}
-          />
+          <TodoAddModal closeModal={closeModal} />
           <ModalDimmer closeModal={closeModal} />
         </ModalPortal>
       )}

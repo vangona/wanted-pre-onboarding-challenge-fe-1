@@ -6,23 +6,15 @@ import { Todo } from '#types/TodoTypes';
 
 interface TodoDetailSectionProps {
   todo: Todo;
-  handleEditTodoEffect: (edittedTodo: Todo) => void;
 }
 
-const TodoDetailSection = ({
-  todo,
-  handleEditTodoEffect,
-}: TodoDetailSectionProps) => {
+const TodoDetailSection = ({ todo }: TodoDetailSectionProps) => {
   const [isEditMode, setIsEditMode] = useState<boolean>(false);
 
   return (
     <Styled.Section>
       {isEditMode ? (
-        <TodoEditForm
-          todo={todo}
-          handleEditTodoEffect={handleEditTodoEffect}
-          closeEditMode={() => setIsEditMode(false)}
-        />
+        <TodoEditForm todo={todo} closeEditMode={() => setIsEditMode(false)} />
       ) : (
         <TodoDetail todo={todo} handleClickEdit={() => setIsEditMode(true)} />
       )}

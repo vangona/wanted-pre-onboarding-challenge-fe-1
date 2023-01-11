@@ -1,13 +1,10 @@
 import React, { Suspense } from 'react';
-import deleteTodo from '@apis/deleteTodo';
-import getTodos from '@apis/getTodos';
+import apiDeleteTodo from '@apis/apiDeleteTodo';
 import TodoListItem from '@components/home/TodoListItem';
-import useToken from '@hooks/useToken';
-import * as Styled from '@styles/home/TodoListSection.style';
-import { useQuery } from '@tanstack/react-query';
-import { REACT_QUERY_KEY } from '@constants';
-import type { Todo } from '#types/TodoTypes';
 import useGetTodosQuery from '@hooks/queries/useGetTodosQuery';
+import * as Styled from '@styles/home/TodoListSection.style';
+import getUserToken from '@utils/getUserToken';
+import type { Todo } from '#types/TodoTypes';
 
 interface TodoListSectionProps {
   handleClickTodo: (newTodo: Todo) => void;
@@ -20,18 +17,14 @@ const TodoListSection = ({
   openModal,
   handleDeleteTodoEffect,
 }: TodoListSectionProps) => {
-  const token = useToken();
+  const token = getUserToken();
   const { data: todos } = useGetTodosQuery();
 
   const handleClickDeleteTodo = async (id: string) => {
-    const response = await deleteTodo(id, token);
+    await apiDeleteTodo(id, token);
 
-    if ('details' in response) {
-      alert(`삭제 중 문제가 발생했습니다. ${response.details}`);
-    } else {
-      alert('삭제되었습니다!');
-      handleDeleteTodoEffect(id);
-    }
+    alert('삭제되었습니다!');
+    handleDeleteTodoEffect(id);
   };
 
   return (

@@ -1,17 +1,12 @@
 import React, { useState } from 'react';
-import createTodo from '@apis/apiCreateTodo';
 import useCreateTodoMutation from '@hooks/mutations/useCreateTodoMutation';
 import * as Styled from '@styles/home/TodoAddModal.style';
-import getUserToken from '@utils/getUserToken';
-import type { Todo } from '#types/TodoTypes';
 
 interface TodoAddModalProps {
   closeModal: () => void;
-  handleAddTodoEffect: (newTodoItem: Todo) => void;
 }
 
 const TodoAddModal = ({ closeModal }: TodoAddModalProps) => {
-  const token = getUserToken();
   const { mutate, isError, error } = useCreateTodoMutation();
   const [todoTitle, setTodoTitle] = useState<string>('');
   const [todoContent, setTodoContent] = useState<string>('');
@@ -29,12 +24,8 @@ const TodoAddModal = ({ closeModal }: TodoAddModalProps) => {
   const handleSubmit: React.FormEventHandler = async (e) => {
     e.preventDefault();
     mutate({ todoTitle, todoContent });
-    const response = await createTodo(todoTitle, todoContent, token);
 
-    if (!isError) {
-      alert(`할 일이 성공적으로 추가되었습니다! ${response?.data.title}`);
-      closeModal();
-    }
+    if (!isError) closeModal();
   };
 
   return (

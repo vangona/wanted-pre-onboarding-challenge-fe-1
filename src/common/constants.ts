@@ -10,7 +10,8 @@ export const METHOD = {
 
 // React Query
 export const REACT_QUERY_KEY = {
-  GET_TODOS: 'todos',
+  GET_TODOS: 'getTodos',
+  GET_TODO_BY_ID: 'getTodoById',
 } as const;
 
 // Styles

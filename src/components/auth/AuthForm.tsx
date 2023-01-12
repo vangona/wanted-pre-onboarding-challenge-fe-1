@@ -42,6 +42,10 @@ const AuthForm = ({ isRegister }: AuthFormProps) => {
 
     if ('details' in result) {
       setError(result.details);
+      setTimeout(() => {
+        setError('');
+      }, 2000);
+      return;
     } else {
       localStorage.setItem(LOCALSTORAGE_TOKEN_KEY, result.token);
       navigate(0); // reload를 통해서 루트 경로로 이동
@@ -50,17 +54,28 @@ const AuthForm = ({ isRegister }: AuthFormProps) => {
 
     setEmail('');
     setPassword('');
+    setError('');
   };
 
   const handleSignup: React.FormEventHandler = async (event) => {
     event.preventDefault();
     setError('');
-    if (password !== repassword) setError('비밀번호가 다릅니다.');
+    if (password !== repassword) {
+      setError('비밀번호가 다릅니다.');
+      setTimeout(() => {
+        setError('');
+      }, 2000);
+      return;
+    }
 
     const result = await apiSignup(email, password);
 
     if ('details' in result) {
       setError(result.details);
+      setTimeout(() => {
+        setError('');
+      }, 2000);
+      return;
     } else {
       alert(result.message);
     }
@@ -68,6 +83,7 @@ const AuthForm = ({ isRegister }: AuthFormProps) => {
     setEmail('');
     setPassword('');
     setRepassword('');
+    setError('');
   };
 
   useEffect(() => {
@@ -81,32 +97,34 @@ const AuthForm = ({ isRegister }: AuthFormProps) => {
   return (
     <Styled.Form onSubmit={isRegister ? handleSignup : handleLogin}>
       <Styled.Box>
-        <Styled.Label>이메일 : </Styled.Label>
+        <Styled.Label>e-mail : </Styled.Label>
         <Styled.EmailInput
           type='text'
           value={email}
           onChange={handleChangeEmail}
+          placeholder='email@example.com'
         />
       </Styled.Box>
       <Styled.Box>
-        <Styled.Label>비밀번호 : </Styled.Label>
+        <Styled.Label>password : </Styled.Label>
         <Styled.PasswordInput
           type='password'
           value={password}
           onChange={handleChangePassword}
+          placeholder='8자리 이상'
         />
       </Styled.Box>
       {isRegister && (
-        <Styled.Box>
-          <Styled.Label>비밀번호 확인 : </Styled.Label>
+        <Styled.RePasswordBox>
+          <Styled.Label>re-password : </Styled.Label>
           <Styled.PasswordInput
             type='password'
             value={repassword}
             onChange={handleChangeRePassword}
           />
-        </Styled.Box>
+        </Styled.RePasswordBox>
       )}
-      <div>{error}</div>
+      {error && <Styled.Error>{error}</Styled.Error>}
       <Styled.SubmitButton disabled={!isValidForm}>
         {isRegister ? '회원가입' : '로그인'}
       </Styled.SubmitButton>

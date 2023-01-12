@@ -3,6 +3,7 @@ import { createRoutesFromElements, Route, RouterProvider } from 'react-router';
 import { createBrowserRouter } from 'react-router-dom';
 import Auth from '@routes/Auth';
 import Home from '@routes/Home';
+import GlobalStyle from '@styles/Global.style';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { Reset } from 'styled-reset';
 
@@ -21,6 +22,7 @@ const App = () => {
   return (
     <>
       <Reset />
+      <GlobalStyle />
       <QueryClientProvider client={queryClient}>
         <RouterProvider router={router} />
       </QueryClientProvider>

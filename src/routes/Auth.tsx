@@ -24,11 +24,15 @@ const Auth = () => {
 
   return (
     <AuthLayout>
-      <Styled.Title>{isRegister ? '회원가입' : '로그인'}</Styled.Title>
-      <AuthForm isRegister={isRegister} />
-      <Styled.AuthButton onClick={toggleIsRegister}>
-        {isRegister ? '로그인으로 변경' : '회원가입으로 변경'}
-      </Styled.AuthButton>
+      <Styled.AuthContainer>
+        <Styled.AuthTitle>
+          {isRegister ? '회원가입' : '로그인'}
+        </Styled.AuthTitle>
+        <AuthForm isRegister={isRegister} />
+        <Styled.AuthButton onClick={toggleIsRegister}>
+          {isRegister ? '🔃 로그인으로 변경' : '🔃 회원가입으로 변경'}
+        </Styled.AuthButton>
+      </Styled.AuthContainer>
     </AuthLayout>
   );
 };

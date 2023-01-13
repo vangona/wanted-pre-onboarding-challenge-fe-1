@@ -8,6 +8,7 @@
       "@utils/*": ["src/utils/*"],
       "@components/*": ["src/components/*"],
       "@hooks/*": ["src/hooks/*"],
+      "@assets/*": ["src/assets/*"],
       "#types/*": ["src/types/*"],
       "@constants": ["src/common/constants"]
     }

@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 
-export const AuthContainer = styled.div`
+export const AuthContainer = styled.div<{ isRegister: boolean }>`
+  width: ${(props) => (props.isRegister ? '500px' : '450px')};
+  height: ${(props) => (props.isRegister ? '350px' : '320px')};
   padding: 40px 80px;
   display: flex;
   flex-direction: column;

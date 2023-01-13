@@ -24,7 +24,7 @@ const Auth = () => {
 
   return (
     <AuthLayout>
-      <Styled.AuthContainer>
+      <Styled.AuthContainer isRegister={isRegister}>
         <Styled.AuthTitle>
           {isRegister ? '회원가입' : '로그인'}
         </Styled.AuthTitle>

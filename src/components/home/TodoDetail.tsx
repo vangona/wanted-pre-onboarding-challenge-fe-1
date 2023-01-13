@@ -13,7 +13,8 @@ const TodoDetail = ({ todo }: TodoDetailProps) => {
   const [edittedTitle, setEdittedTitle] = useState(todo.title);
   const [edittedContent, setEdittedContent] = useState(todo.content);
 
-  const toggleIsEdit = () => {
+  const toggleIsEdit: React.FormEventHandler = (e) => {
+    e.preventDefault();
     setIsEdit((prev) => !prev);
   };
 
@@ -40,10 +41,10 @@ const TodoDetail = ({ todo }: TodoDetailProps) => {
   };
 
   return (
-    <>
+    <Styled.Form>
       <Styled.Title
         contentEditable={isEdit}
-        suppressContentEditableWarning
+        suppressContentEditableWarning // 자식이 텍스트노드 뿐이기 때문에 suppressContentEditableWarning을 사용하여 contentEditable을 사용함.
         onInput={handleChangeTitle}
       >
         {todo.title}
@@ -58,7 +59,7 @@ const TodoDetail = ({ todo }: TodoDetailProps) => {
       <Styled.EditButton onClick={isEdit ? handleSubmit : toggleIsEdit}>
         {isEdit ? '수정완료' : '수정하기'}
       </Styled.EditButton>
-    </>
+    </Styled.Form>
   );
 };
 

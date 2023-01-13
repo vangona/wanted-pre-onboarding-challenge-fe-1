@@ -1,5 +1,4 @@
-import React from 'react';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import useDeleteTodoMutation from '@hooks/mutations/useDeleteTodoMutation';
 import * as Styled from '@styles/home/TodoListItem.style';

@@ -10,9 +10,7 @@ export const Layout = styled.div<{
   left: ${(props) => props.left}px;
   top: ${(props) => props.top}px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
+  justify-content: center;
   width: 320px;
   height: 240px;
   margin-left: ${HOME_STYLE.LIST_SECTION_WIDTH};

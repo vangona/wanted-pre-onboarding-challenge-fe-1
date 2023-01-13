@@ -42,6 +42,7 @@ export const RePasswordBox = styled.div`
   opacity: 0;
   animation: ${fadeIn} 0.3s forwards ease-in 0.3s;
 `;
+
 export const Label = styled.label``;
 export const EmailInput = styled.input``;
 export const PasswordInput = styled.input``;
@@ -52,13 +53,14 @@ export const Error = styled.div`
   color: red;
   animation: ${flitering} 2s forwards;
 `;
+
 export const SubmitButton = styled.button`
   margin-top: 20px;
   width: 150px;
   height: 40px;
   align-self: center;
   border-radius: 5px;
-  font-size: 1rem;
+  font-size: 0.9rem;
   color: var(--off-white-color);
   background-color: var(--brown-color);
   :hover {

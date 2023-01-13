@@ -18,6 +18,7 @@ export const AuthContainer = styled.div<{ isRegister: boolean }>`
 
 export const AuthTitle = styled.h1`
   font-size: 1.5rem;
+  font-weight: bold;
 `;
 
 export const AuthButton = styled.button`

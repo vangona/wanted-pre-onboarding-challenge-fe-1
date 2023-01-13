@@ -10,6 +10,10 @@ const GlobalStyle = createGlobalStyle`
     height: 100%;
   }
 
+  *, #root {
+    font-family: "Nanum Myeongjo", serif;
+  }
+
   :root {
     --primary-green-color: #013327; 
     --off-white-color: #f9f9f9;

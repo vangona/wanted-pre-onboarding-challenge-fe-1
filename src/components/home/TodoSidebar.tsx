@@ -5,9 +5,15 @@ import * as Styled from '@styles/home/TodoSidebar.style';
 
 interface TodoSidebarProps {
   openModal: () => void;
+  noteOpacity: number;
+  handleChangeOpacity: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
-const TodoSidebar = ({ openModal }: TodoSidebarProps) => {
+const TodoSidebar = ({
+  openModal,
+  noteOpacity,
+  handleChangeOpacity,
+}: TodoSidebarProps) => {
   const { data: todos } = useGetTodosQuery();
 
   return (
@@ -21,6 +27,14 @@ const TodoSidebar = ({ openModal }: TodoSidebarProps) => {
           <Styled.AddButton onClick={openModal}>추가하기</Styled.AddButton>
         </Styled.List>
       )}
+      <Styled.OpacityInput
+        onChange={handleChangeOpacity}
+        type='range'
+        value={noteOpacity}
+        min={0}
+        max={1}
+        step={0.1}
+      />
     </Styled.Layout>
   );
 };

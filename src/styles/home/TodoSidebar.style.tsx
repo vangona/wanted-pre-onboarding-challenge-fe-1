@@ -10,6 +10,7 @@ export const Layout = styled.section`
   align-items: center;
   gap: 40px;
   padding: ${HOME_STYLE.SECTION_PADDING};
+  box-shadow: 3px 0px 5px rgba(0, 0, 0, 0.5);
   background-color: var(--primary-green-color);
   color: var(--off-white-color);
 `;
@@ -39,3 +40,5 @@ export const AddButton = styled.button`
     transform: scale(0.98);
   }
 `;
+
+export const OpacityInput = styled.input``;

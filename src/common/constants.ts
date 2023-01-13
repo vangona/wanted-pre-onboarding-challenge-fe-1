@@ -18,7 +18,10 @@ export const REACT_QUERY_KEY = {
 export const HOME_STYLE = {
   LIST_SECTION_WIDTH: '300px',
   SECTION_PADDING: '30px',
-  NOTE_PADDING: '30px',
+  NOTE_INNER_PADDING: '30px',
+  NOTE_POSITION_PADDING: 10,
+  NOTE_WIDTH: '320px',
+  NOTE_HEIGHT: '240px',
 };
 
 export const Z_INDEX = {

@@ -17,6 +17,13 @@ const Home = () => {
   const todoId = searchParams.get('todo');
   const { data: todoResponseBody } = useGetTodoByIdQuery(todoId || ''); // useQuery에서 enabled로 처리해줌.
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+  const [noteOpacity, setNoteOpacity] = useState<number>(0.5);
+
+  const handleChangeOpacity: React.ChangeEventHandler<HTMLInputElement> = (
+    e,
+  ) => {
+    setNoteOpacity(+e.target.value);
+  };
 
   const closeModal = () => {
     setIsModalOpen(false);
@@ -33,10 +40,14 @@ const Home = () => {
   return (
     <HomeLayout>
       <Suspense fallback='로딩중...'>
-        <TodoSidebar openModal={() => setIsModalOpen(true)} />
+        <TodoSidebar
+          openModal={() => setIsModalOpen(true)}
+          noteOpacity={noteOpacity}
+          handleChangeOpacity={handleChangeOpacity}
+        />
       </Suspense>
       <Suspense fallback='로딩중...'>
-        {todoResponseBody?.data && <TodoNote />}
+        {todoResponseBody?.data && <TodoNote noteOpacity={noteOpacity} />}
       </Suspense>
       {isModalOpen && (
         <ModalPortal>

@@ -23,7 +23,6 @@ export const Layout = styled.div<{
   transition: 0.3s all ease-in-out;
   :hover {
     opacity: 1;
-    transform: skewX(-1deg);
   }
 `;
 

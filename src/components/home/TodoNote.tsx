@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import TodoDetail from '@components/home/TodoDetail';
-import TodoEditForm from '@components/home/TodoEditForm';
 import useGetTodoByIdQuery from '@hooks/queries/useGetTodoByIdQuery';
 import * as Styled from '@styles/home/TodoNote.style';
 import { HOME_STYLE } from '@constants';
@@ -14,7 +13,6 @@ const TodoNote = ({ noteOpacity }: TodoNoteProps) => {
   const [searchParams, setSearchParams] = useSearchParams();
   const todoId = searchParams.get('todo');
   const { data: todoResponseBody } = useGetTodoByIdQuery(todoId || ''); // useQuery에서 enabled로 처리해줌.
-  const [isEditMode, setIsEditMode] = useState<boolean>(false);
   const [posLeft, setPosLeft] = useState<number>(0);
   const [posTop, setPosTop] = useState<number>(0);
 
@@ -48,17 +46,7 @@ const TodoNote = ({ noteOpacity }: TodoNoteProps) => {
 
   return (
     <Styled.Layout left={posLeft} top={posTop} defaultOpacity={noteOpacity}>
-      {isEditMode ? (
-        <TodoEditForm
-          todo={todoResponseBody.data}
-          closeEditMode={() => setIsEditMode(false)}
-        />
-      ) : (
-        <TodoDetail
-          todo={todoResponseBody.data}
-          handleClickEdit={() => setIsEditMode(true)}
-        />
-      )}
+      <TodoDetail todo={todoResponseBody.data} />
       <Styled.CloseButton onClick={handleDeleteNote}>X</Styled.CloseButton>
     </Styled.Layout>
   );

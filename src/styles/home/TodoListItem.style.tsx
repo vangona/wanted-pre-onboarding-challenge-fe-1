@@ -11,9 +11,6 @@ export const ListItem = styled.li`
   border-radius: 5px;
   background-color: var(--beige-color);
   color: var(--brown-color);
-  :active {
-    transform: scale(0.98);
-  }
 `;
 
 export const TodoCheckbox = styled.input`
@@ -26,6 +23,9 @@ export const TodoTitle = styled.h3<{ isFinish: boolean }>`
   text-decoration: ${(props) => props.isFinish && 'line-through'};
   :hover {
     cursor: pointer;
+  }
+  :active {
+    transform: scale(0.98);
   }
 `;
 export const DeleteButton = styled.button`

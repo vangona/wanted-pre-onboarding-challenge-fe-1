@@ -7,6 +7,7 @@ import TodoAddModal from '@components/home/TodoAddModal';
 import TodoNote from '@components/home/TodoNote';
 import TodoSidebar from '@components/home/TodoSidebar';
 import useGetTodoByIdQuery from '@hooks/queries/useGetTodoByIdQuery';
+import Clock from '@components/common/Clock';
 
 const Home = () => {
   const [searchParams] = useSearchParams();
@@ -34,6 +35,7 @@ const Home = () => {
           handleChangeOpacity={handleChangeOpacity}
         />
       </Suspense>
+      <Clock />
       <Suspense fallback='로딩중...'>
         {todoResponseBody?.data && <TodoNote noteOpacity={noteOpacity} />}
       </Suspense>

@@ -2,7 +2,6 @@ import styled from 'styled-components';
 import { HOME_STYLE } from '@constants';
 
 export const Layout = styled.section`
-  position: absolute;
   width: ${HOME_STYLE.LIST_SECTION_WIDTH};
   height: 100%;
   display: flex;

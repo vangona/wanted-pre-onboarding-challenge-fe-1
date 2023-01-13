@@ -1,20 +1,42 @@
 import React from 'react';
 import { createRoutesFromElements, Route, RouterProvider } from 'react-router';
 import { createBrowserRouter } from 'react-router-dom';
+import ProtectedRoute from '@components/common/ProtectedRoute';
 import Auth from '@routes/Auth';
 import Home from '@routes/Home';
 import GlobalStyle from '@styles/Global.style';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import checkIsValidToken from '@utils/checkIsValidToken';
+import getUserToken from '@utils/getUserToken';
 import { Reset } from 'styled-reset';
 
 const App = () => {
+  const userToken = getUserToken();
   const queryClient = new QueryClient();
 
   const router = createBrowserRouter(
     createRoutesFromElements(
       <>
-        <Route path='/' element={<Home />} />
-        <Route path='/auth' element={<Auth />} />
+        <Route
+          path='/'
+          element={
+            <ProtectedRoute
+              condition={checkIsValidToken(userToken)}
+              validRoute={<Home />}
+              invalidTo='/auth'
+            />
+          }
+        />
+        <Route
+          path='/auth'
+          element={
+            <ProtectedRoute
+              condition={!checkIsValidToken(userToken)}
+              validRoute={<Auth />}
+              invalidTo='/'
+            />
+          }
+        />
       </>,
     ),
   );

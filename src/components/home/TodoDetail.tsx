@@ -1,13 +1,13 @@
 import React from 'react';
-import * as Styled from '@styles/home/TodoDetailItem.style';
+import * as Styled from '@styles/home/TodoDetail.style';
 import type { Todo } from '#types/TodoTypes';
 
-interface TodoDetailItemProps {
+interface TodoDetailProps {
   todo: Todo;
   handleClickEdit: () => void;
 }
 
-const TodoDetailItem = ({ todo, handleClickEdit }: TodoDetailItemProps) => {
+const TodoDetail = ({ todo, handleClickEdit }: TodoDetailProps) => {
   return (
     <>
       <Styled.Title>{todo.title}</Styled.Title>
@@ -17,4 +17,4 @@ const TodoDetailItem = ({ todo, handleClickEdit }: TodoDetailItemProps) => {
   );
 };
 
-export default TodoDetailItem;
+export default TodoDetail;

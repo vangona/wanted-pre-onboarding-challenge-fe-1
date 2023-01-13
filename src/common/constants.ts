@@ -16,8 +16,9 @@ export const REACT_QUERY_KEY = {
 
 // Styles
 export const HOME_STYLE = {
-  LIST_SECTION_WIDTH: '200px',
-  SECTION_PADDING: '10px',
+  LIST_SECTION_WIDTH: '300px',
+  SECTION_PADDING: '30px',
+  NOTE_PADDING: '30px',
 };
 
 export const Z_INDEX = {

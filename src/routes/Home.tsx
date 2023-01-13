@@ -4,8 +4,8 @@ import ModalDimmer from '@components/common/ModalDimmer';
 import ModalPortal from '@components/common/ModalPortal';
 import HomeLayout from '@components/home/HomeLayout';
 import TodoAddModal from '@components/home/TodoAddModal';
-import TodoDetailSection from '@components/home/TodoDetailSection';
-import TodoListSection from '@components/home/TodoListSection';
+import TodoNote from '@components/home/TodoNote';
+import TodoSidebar from '@components/home/TodoSidebar';
 import useGetTodoByIdQuery from '@hooks/queries/useGetTodoByIdQuery';
 import checkIsValidToken from '@utils/checkIsValidToken';
 import getUserToken from '@utils/getUserToken';
@@ -33,10 +33,10 @@ const Home = () => {
   return (
     <HomeLayout>
       <Suspense fallback='로딩중...'>
-        <TodoListSection openModal={() => setIsModalOpen(true)} />
+        <TodoSidebar openModal={() => setIsModalOpen(true)} />
       </Suspense>
       <Suspense fallback='로딩중...'>
-        {todoResponseBody?.data && <TodoDetailSection />}
+        {todoResponseBody?.data && <TodoNote />}
       </Suspense>
       {isModalOpen && (
         <ModalPortal>

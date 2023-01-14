@@ -1,8 +1,8 @@
 import React, { useState, Suspense } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import Clock from '@components/common/Clock';
 import ModalDimmer from '@components/common/ModalDimmer';
 import ModalPortal from '@components/common/ModalPortal';
+import Clock from '@components/home/Clock';
 import HomeLayout from '@components/home/HomeLayout';
 import TodoAddModal from '@components/home/TodoAddModal';
 import TodoNote from '@components/home/TodoNote';

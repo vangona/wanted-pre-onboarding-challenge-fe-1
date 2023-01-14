@@ -8,3 +8,16 @@ export const Layout = styled.div<{ randBgSrc: string }>`
   background-size: auto 100%;
   background-position: center;
 `;
+
+export const ChangeBgButton = styled.button`
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  border: none;
+  background-color: transparent;
+  color: var(--off-white-color);
+  font-size: 2rem;
+  :hover {
+    cursor: pointer;
+  }
+`;

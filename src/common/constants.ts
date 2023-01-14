@@ -17,6 +17,7 @@ export const REACT_QUERY_KEY = {
 // Styles
 export const HOME_STYLE = {
   LIST_SECTION_WIDTH: '300px',
+  LIST_SECTION_WIDTH_HALF: '150px', // 계산해야하는 곳이 더 많아지면 number로 변경
   SECTION_PADDING: '30px',
   NOTE_INNER_PADDING: '30px',
   NOTE_POSITION_PADDING: 10,
@@ -28,3 +29,6 @@ export const Z_INDEX = {
   MODAL: 99,
   MODAL_DIMMER: 9,
 };
+
+// 배경 이미지
+export const BG_IMG_COUNT = 26;

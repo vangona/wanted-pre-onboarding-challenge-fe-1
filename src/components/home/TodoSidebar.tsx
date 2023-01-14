@@ -4,12 +4,16 @@ import useGetTodosQuery from '@hooks/queries/useGetTodosQuery';
 import * as Styled from '@styles/home/TodoSidebar.style';
 
 interface TodoSidebarProps {
+  isSidebarOpen: boolean;
+  handleToggleSidebar: () => void;
   openModal: () => void;
   noteOpacity: number;
   handleChangeOpacity: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 const TodoSidebar = ({
+  isSidebarOpen,
+  handleToggleSidebar,
   openModal,
   noteOpacity,
   handleChangeOpacity,
@@ -17,7 +21,7 @@ const TodoSidebar = ({
   const { data: todos } = useGetTodosQuery();
 
   return (
-    <Styled.Layout>
+    <Styled.Layout isSidebarOpen={isSidebarOpen}>
       <Styled.Title>오늘의 할 일 목록</Styled.Title>
       {todos && (
         <Styled.List>
@@ -35,6 +39,9 @@ const TodoSidebar = ({
         max={1}
         step={0.1}
       />
+      <Styled.ToggleSidebar onClick={handleToggleSidebar}>
+        {isSidebarOpen ? '<<' : '>>'}
+      </Styled.ToggleSidebar>
     </Styled.Layout>
   );
 };

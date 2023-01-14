@@ -1,7 +1,11 @@
 import React, { useState } from 'react';
 import * as Styled from '@styles/common/Clock.style';
 
-const Clock = () => {
+interface ClockProps {
+  isSidebarOpen: boolean;
+}
+
+const Clock = ({ isSidebarOpen }: ClockProps) => {
   const [currDate, setCurrDate] = useState('');
   const [currTime, setCurrTime] = useState('');
 
@@ -30,7 +34,7 @@ const Clock = () => {
   setInterval(changeCurrTimeBySecond, 1000);
 
   return (
-    <Styled.Layout>
+    <Styled.Layout isSidebarOpen={isSidebarOpen}>
       <Styled.DateConatiner>{currDate}</Styled.DateConatiner>
       <Styled.TimeContainer>{currTime}</Styled.TimeContainer>
     </Styled.Layout>

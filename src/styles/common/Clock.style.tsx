@@ -18,9 +18,9 @@ export const Layout = styled.section<{ isSidebarOpen: boolean }>`
 `;
 
 export const DateConatiner = styled.div`
-  font-size: 2rem;
+  font-size: 2.5rem;
 `;
 
 export const TimeContainer = styled.div`
-  font-size: 3.5rem;
+  font-size: 5rem;
 `;

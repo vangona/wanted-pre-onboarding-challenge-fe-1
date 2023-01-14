@@ -5,6 +5,6 @@ export const Layout = styled.div<{ randBgSrc: string }>`
   height: 100%;
   display: flex;
   background-image: url(${(props) => props.randBgSrc});
-  background-size: cover;
+  background-size: auto 100%;
   background-position: center;
 `;

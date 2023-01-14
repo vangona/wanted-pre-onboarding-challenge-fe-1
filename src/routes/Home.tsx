@@ -14,7 +14,7 @@ const Home = () => {
   const todoId = searchParams.get('todo');
   const { data: todoResponseBody } = useGetTodoByIdQuery(todoId || ''); // useQuery에서 enabled로 처리해줌.
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
-  const [isSidebarOpen, setIsSidebarOpen] = useState<boolean>(true);
+  const [isSidebarOpen, setIsSidebarOpen] = useState<boolean>(false);
   const [noteOpacity, setNoteOpacity] = useState<number>(0.5);
 
   const handleChangeOpacity: React.ChangeEventHandler<HTMLInputElement> = (

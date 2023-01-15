@@ -8,8 +8,7 @@ const apiSignup = async (
   email: string,
   password: string,
 ): Promise<SignupResponseBody | ErrorResponseBody> => {
-  const url = new URL(API_HOST);
-  url.pathname = 'users/create';
+  const url = new URL(`${API_HOST}/users/create`);
 
   const response = await fetch(url, {
     method: METHOD.POST,

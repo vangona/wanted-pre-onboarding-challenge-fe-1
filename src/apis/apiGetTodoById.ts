@@ -9,8 +9,7 @@ const apiGetTodoById = async (
   todoId: string,
   token: string,
 ): Promise<GetTodoByIdResponseBody | undefined> => {
-  const url = new URL(API_HOST);
-  url.pathname = `/todos/${todoId}`;
+  const url = new URL(`${API_HOST}/todos/${todoId}`);
 
   const response = await fetch(url, {
     headers: {

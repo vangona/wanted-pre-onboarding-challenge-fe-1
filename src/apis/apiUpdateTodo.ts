@@ -11,8 +11,7 @@ const apiUpdateTodo = async (
   content: string,
   token: string,
 ): Promise<UpdateTodoResponseBody | undefined> => {
-  const url = new URL(API_HOST);
-  url.pathname = `/todos/${id}`;
+  const url = new URL(`${API_HOST}/todos/${id}`);
 
   try {
     const response = await fetch(url, {

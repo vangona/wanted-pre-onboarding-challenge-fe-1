@@ -8,8 +8,7 @@ import type {
 const apiGetTodos = async (
   token: string,
 ): Promise<GetTodosResponseBody | undefined> => {
-  const url = new URL(API_HOST);
-  url.pathname = '/todos';
+  const url = new URL(`${API_HOST}/todos`);
 
   const response = await fetch(url, {
     headers: {

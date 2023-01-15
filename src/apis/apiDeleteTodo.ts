@@ -6,8 +6,7 @@ const apiDeleteTodo = async (
   id: string,
   token: string,
 ): Promise<DeleteTodoResponseBody | undefined> => {
-  const url = new URL(API_HOST);
-  url.pathname = `/todos/${id}`;
+  const url = new URL(`${API_HOST}/todos/${id}`);
 
   const response = await fetch(url, {
     method: METHOD.DELETE,

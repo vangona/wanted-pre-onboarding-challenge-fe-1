@@ -10,8 +10,7 @@ const apiCreateTodo = async (
   content: string,
   token: string,
 ): Promise<CreateTodoResponseBody | undefined> => {
-  const url = new URL(API_HOST);
-  url.pathname = '/todos';
+  const url = new URL(`${API_HOST}/todos`);
 
   const response = await fetch(url, {
     method: METHOD.POST,

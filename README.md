@@ -1,37 +1,45 @@
 # 원티드 프리온보딩 FE 챌린지 - CRUD w React Query
 
-## 과제 기록
+## 📚 과제 기록
 
 ### 1-1. 리팩토링과 타입스크립트 적용
 
 - [x] 수업 내용 기반으로 리팩토링
     - Suspense 적용
         - [관련 커밋 바로가기](https://github.com/vangona/wanted-pre-onboarding-challenge-fe-1/commit/07451330c2e50afdb7bc47cea5cb404dee39cfc6)
+        - [관련 내용 바로가기](https://github.com/vangona/wanted-pre-onboarding-challenge-fe-1#suspense-%EC%82%AC%EC%9A%A9%EC%9C%BC%EB%A1%9C-%EB%A1%9C%EB%94%A9-%ED%91%9C%EC%8B%9C%ED%95%98%EA%B8%B0)
     - api 함수에 api 접두사 추가하여 가독성 높임
         - [관련 커밋 바로가기](https://github.com/vangona/wanted-pre-onboarding-challenge-fe-1/commit/3bfe72585378004a14a414a7acbb302b43166d10)
+        - [관련 내용 바로가기](https://github.com/vangona/wanted-pre-onboarding-challenge-fe-1#api-%ED%95%A8%EC%88%98%EB%AA%85-%EC%95%9E%EC%97%90-api%EB%A5%BC-%EB%B6%99%EC%97%AC%EC%A4%8C)
 - [ ] 타입스크립트 적용
     - EventHandler를 타입 단언 없이 처리하는 방법은 찾았으나, 아직 전역적으로 적용하지 못함.
 
 ### 1-2. Redux 뜯어보기, React Query 사용해보기
 
 - [x] Redux 소스코드 분석해서 나만의 Redux 구현하기
-    - [관련 커밋 바로 가기](https://github.com/vangona/wanted-pre-onboarding-challenge-fe-1/commit/5ba6540dc69474ef684520950fece459c102ed67)
+    - [관련 커밋 바로가기](https://github.com/vangona/wanted-pre-onboarding-challenge-fe-1/commit/5ba6540dc69474ef684520950fece459c102ed67)
 - [x] API React Query로 리팩토링하기
-    - [관련 소스코드 바로 가기](https://github.com/vangona/wanted-pre-onboarding-challenge-fe-1/tree/main/src/hooks) 
+    - [관련 소스코드 바로가기](https://github.com/vangona/wanted-pre-onboarding-challenge-fe-1/tree/main/src/hooks) 
+    - [관련 내용 바로가기](https://github.com/vangona/wanted-pre-onboarding-challenge-fe-1#%EB%A6%AC%EC%95%A1%ED%8A%B8-%EC%BF%BC%EB%A6%AC%EB%A5%BC-%ED%86%B5%ED%95%B4-%EC%83%81%ED%83%9C-%EA%B4%80%EB%A6%AC-%EB%B3%B5%EC%9E%A1%EB%8F%84-%EB%82%AE%EC%B6%94%EA%B8%B0)
 
-## 프로젝트 개요
+## 📋 프로젝트 개요
 
 - [원티드 프리온보딩 FE 챌린지](https://github.com/starkoora/wanted-pre-onboarding-challenge-fe-1-api)의 과제로 구현함.
 - 지속적으로 개선시키며 최신 기술을 실험해볼 수 있는 todolist CRUD w React Query
 - 동기부여 할 수 있는 이미지들을 배경이미지로 사용하여 할 일에 대해 동기부여 될 수 있도록 디자인하기
 
-### [디자인 Figma](https://www.figma.com/file/IiY1rAJDZ0jCsmK2CwwHkA/wanted-preonboarding-fe-1?t=LHTLyi3zJ4TgUysy-0)
 
 ### 실행 방법
 
 - 현재 알 수 없는 network 에러로 인해 실행이 안되고 있습니다. 빠른 시일 내에 복구하겠습니다.
 
-## 기술스택
+```bash
+# 공사중
+```
+
+### [디자인 Figma](https://www.figma.com/file/IiY1rAJDZ0jCsmK2CwwHkA/wanted-preonboarding-fe-1?t=LHTLyi3zJ4TgUysy-0)
+
+## ⚙️ 기술스택
 ### Typescript, eslint, prettier
 
 - 코드 퀄리티와 잠재적인 위험을 줄이기 위해 사용함
@@ -52,9 +60,12 @@
 
 - 절대경로를 통한 안정적인 모듈 import를 위해 typescript path alias를 적용, 이를 위해 craco 사용함.
 
-## 프로젝트 기능 요구사항 및 기능 소개
+## 👷 프로젝트 기능 요구사항 및 기능 소개
 
-### 1-1) 사전과제 진행 가이드
+<details>
+<summary>
+<h3>1-1) 사전과제 진행 가이드</h3>
+</summary>
 
 - 제공해드리는 API Repository를 활용하여 가이드에 따라 `Todo App`을 작성, 본인의 github에 `Public`으로 올려주세요. (주의: Public이 아닐 경우 과제를 확인할 수 없습니다)
 - 완성한 과제는 모집 마감 후 설문 조사를 통해 제출해주세요. (개강 시 설문 조사 링크 전달 예정)
@@ -67,7 +78,12 @@
 
 \* 문의 사항은 사전 과제 Repository의 Issue로 등록해 주세요.
 
-### 1-2) 클라이언트 구현 과제 안내
+</details>
+
+<details>
+<summary>
+<h3>1-2) 클라이언트 구현 과제 안내</h3>
+</summary>
 
 **Assignment 1 - Login / SignUp**
 
@@ -98,7 +114,12 @@
 
   - [x] 수정되는 Todo의 내용이 목록에서도 실시간으로 반영되어야 합니다
 
-### 과제 참고 사항
+</details>
+
+<details>
+<summary>
+<h3>과제 참고 사항</h3>
+</summary>
 
 1. 로컬 서버를 실행했을 때 생성되는 `db/db.json`이 DB 역할을 하게 됩니다. 해당 파일을 삭제하면 DB는 초기화 됩니다.
 
@@ -106,6 +127,7 @@
 
 3. 로그아웃은 클라이언트 단에서 localStorage에 저장된 token을 삭제하는 방식으로 간단히 구현해주세요.
 
+</details>
 
 ## 🤔 기술적인 고민들
 

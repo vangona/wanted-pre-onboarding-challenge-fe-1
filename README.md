@@ -20,6 +20,7 @@
 
 - [x] Redux 소스코드 분석해서 나만의 Redux 구현하기
     - [관련 커밋 바로가기](https://github.com/vangona/wanted-pre-onboarding-challenge-fe-1/commit/5ba6540dc69474ef684520950fece459c102ed67)
+    - [관련 내용 바로가기](https://github.com/vangona/wanted-pre-onboarding-challenge-fe-1#Redux-%EB%9C%AF%EC%96%B4%EB%B3%B4%EA%B8%B0)
 - [x] API React Query로 리팩토링하기
     - [관련 소스코드 바로가기](https://github.com/vangona/wanted-pre-onboarding-challenge-fe-1/tree/main/src/hooks) 
     - [관련 내용 바로가기](https://github.com/vangona/wanted-pre-onboarding-challenge-fe-1#%EB%A6%AC%EC%95%A1%ED%8A%B8-%EC%BF%BC%EB%A6%AC%EB%A5%BC-%ED%86%B5%ED%95%B4-%EC%83%81%ED%83%9C-%EA%B4%80%EB%A6%AC-%EB%B3%B5%EC%9E%A1%EB%8F%84-%EB%82%AE%EC%B6%94%EA%B8%B0)
@@ -199,6 +200,17 @@
 
 - createTodo 같은 함수명은 이 서비스의 비즈니스 로직에 가까 함수에 붙이는 것이 맞다고 생각함.
 - api 함수에는 api를 접두사로 붙여 구분하였음.
+
+### Redux 뜯어보기
+
+- 단순히 상태관리를 위한 Redux의 내부구조는 아주 단순했다.
+- 구조 자체는 Flux 패턴의 단순 구현체에 가까웠고, 예외처리도 Typescript를 사용한다면 많은 부분을 생략할 수 있었다.
+- Redux가 어렵다기 보다는 Flux 패턴이 새로운 것이라는 것을 다시 느낄 수 있었다.
+- Store와 Subscriber를 관리하는 것이 Pub/Sub 패턴으로 이루어져 있을 줄 알았는데 파악한 바로는 event channel이 없는 단순한 Observer 패턴에 가까웠다. 혁신적이었던 것은 Flux라는 단방향 데이터 흐름을 전역 store로 관리한다는 부분 같았다. 확실히 React와는 다른 흐름이 맞았다.
+- React는 UI와 state를 단방향으로 바인딩하여 UI와 state의 흐름을 간결히 하기위한 Flux 패턴이라면, Redux는 Store라는 전역 상태를 단방향으로 관리하기 위한 Flux 패턴이었다. 동일한 부분은 Flux라는 단방향 패턴일 뿐, 다른 연관성은 적다고 느껴졌다.
+- 따라서 Flux 패턴에 대해 이해한다면 Redux 자체가 코드적으로 어렵게 느껴지지는 않았다.
+- 단번에 파악하기 어려운 것은 react-redux나 redux-toolkit과 관련된 것들이었다.
+- react-redux나 rredux-toolkit을 간단히 뜯어봤는데, react-redux 정도는 hook으로 구현할 수 있을 것 같고 학습에 도움이 될 것 같다는 생각이 들어서 다음번에는 react-redux 형태로 현재 todoNote의 opacity를 제어해볼까한다.
 
 ## 🚀 트러블 슈팅
 

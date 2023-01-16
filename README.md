@@ -206,7 +206,9 @@
 - 단순히 상태관리를 위한 Redux의 내부구조는 아주 단순했다.
 - 구조 자체는 Flux 패턴의 단순 구현체에 가까웠고, 예외처리도 Typescript를 사용한다면 많은 부분을 생략할 수 있었다.
 - Redux가 어렵다기 보다는 Flux 패턴이 새로운 것이라는 것을 다시 느낄 수 있었다.
-- Store와 Subscriber를 관리하는 것이 Pub/Sub 패턴으로 이루어져 있을 줄 알았는데 파악한 바로는 event channel이 없는 단순한 Observer 패턴에 가까웠다. 혁신적이었던 것은 Flux라는 단방향 데이터 흐름을 전역 store로 관리한다는 부분 같았다. 확실히 React와는 다른 흐름이 맞았다.
+- Store와 Subscriber를 관리하는 것이 전체적으로 Pub/Sub 패턴으로 이루어져 있을 줄 알았는데 파악한 바로는 event channel이 없는 단순한 Observer 패턴에 가까웠다. action type에 따라서 subscriber가 선택되어 실행되는 것이 아니라, action type에 따라서 state가 다르게 변경되고 subscriber의 함수들은 모두 실행되었다.
+- state가 변경되면 실행되는 함수, 즉 state - redux - subscriber는 Observer 패턴이었지만 action에 따라 state가 변경되는 방법, 즉 action - redux - reducer의 관계는 action type에 따라 reducer의 동작이 다르기 때문에 pub/sub 패턴에 가까웠다.
+- 혁신적이었던 것은 Flux라는 단방향 데이터 흐름을 전역 store로 관리한다는 부분 같았다. 확실히 React와는 다른 흐름이 맞았다.
 - React는 UI와 state를 단방향으로 바인딩하여 UI와 state의 흐름을 간결히 하기위한 Flux 패턴이라면, Redux는 Store라는 전역 상태를 단방향으로 관리하기 위한 Flux 패턴이었다. 동일한 부분은 Flux라는 단방향 패턴일 뿐, 다른 연관성은 적다고 느껴졌다.
 - 따라서 Flux 패턴에 대해 이해한다면 Redux 자체가 코드적으로 어렵게 느껴지지는 않았다.
 - 단번에 파악하기 어려운 것은 react-redux나 redux-toolkit과 관련된 것들이었다.

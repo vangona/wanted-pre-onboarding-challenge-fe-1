@@ -26,29 +26,11 @@ const useUpdateTodoMutation = () => {
   ) => {
     if (!updateTodoResponseBody) return;
 
-    queryClient.setQueryData(
-      [REACT_QUERY_KEY.GET_TODOS, userToken],
-      (old: GetTodosResponseBody | undefined) => {
-        if (!old) return { data: [updateTodoResponseBody.data] };
-
-        const updatedData = {
-          data: old.data.map((todo) => {
-            if (todo.id === updateTodoResponseBody.data.id)
-              return updateTodoResponseBody.data;
-            return todo;
-          }),
-        };
-
-        return updatedData;
-      },
-    );
-
-    queryClient.setQueryData(
-      [REACT_QUERY_KEY.GET_TODO_BY_ID, updateTodoResponseBody.data.id],
-      () => {
-        return updateTodoResponseBody;
-      },
-    );
+    queryClient.invalidateQueries([REACT_QUERY_KEY.GET_TODOS, userToken]);
+    queryClient.invalidateQueries([
+      REACT_QUERY_KEY.GET_TODO_BY_ID,
+      updateTodoResponseBody.data.id,
+    ]);
 
     alert(
       `할 일이 성공적으로 수정되었습니다! ${updateTodoResponseBody.data.title}`,

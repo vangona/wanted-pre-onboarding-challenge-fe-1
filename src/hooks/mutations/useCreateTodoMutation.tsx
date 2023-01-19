@@ -24,16 +24,7 @@ const useCreateTodoMutation = () => {
   ) => {
     if (!createTodoResponseBody) return;
 
-    queryClient.setQueryData(
-      [REACT_QUERY_KEY.GET_TODOS, userToken],
-      (old: GetTodosResponseBody | undefined) => {
-        if (!old) return { data: [createTodoResponseBody.data] };
-
-        const newData = { data: [...old.data, createTodoResponseBody.data] };
-
-        return newData;
-      },
-    );
+    queryClient.invalidateQueries([REACT_QUERY_KEY.GET_TODOS, userToken]);
 
     alert(
       `할 일이 성공적으로 추가되었습니다! ${createTodoResponseBody.data.title}`,

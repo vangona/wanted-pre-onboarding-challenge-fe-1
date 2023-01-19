@@ -19,20 +19,8 @@ const useDeleteTodoMutation = () => {
     return apiDeleteTodo(todoId, userToken);
   };
 
-  const updateTodos = (
-    _: DeleteTodoResponseBody | undefined,
-    { todoId }: DeleteTodoProps,
-  ) => {
-    queryClient.setQueryData(
-      [REACT_QUERY_KEY.GET_TODOS, userToken],
-      (old: GetTodosResponseBody | undefined) => {
-        if (!old) return { data: [] };
-        const deletedData = {
-          data: old.data.filter((todo) => todo.id === todoId),
-        };
-        return deletedData;
-      },
-    );
+  const updateTodos = () => {
+    queryClient.invalidateQueries([REACT_QUERY_KEY.GET_TODOS, userToken]);
 
     alert('할 일이 성공적으로 삭제되었습니다!');
   };

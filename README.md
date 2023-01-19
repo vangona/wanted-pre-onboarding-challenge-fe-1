@@ -18,7 +18,7 @@
   - api 함수에 api 접두사 추가하여 가독성 높임
     - [관련 커밋 바로가기](https://github.com/vangona/wanted-pre-onboarding-challenge-fe-1/commit/3bfe72585378004a14a414a7acbb302b43166d10)
     - [관련 내용 바로가기](https://github.com/vangona/wanted-pre-onboarding-challenge-fe-1#api-%ED%95%A8%EC%88%98%EB%AA%85-%EC%95%9E%EC%97%90-api%EB%A5%BC-%EB%B6%99%EC%97%AC%EC%A4%8C)
-- [ ] 타입스크립트 적용
+- [x] 타입스크립트 적용
   - EventHandler를 타입 단언 없이 처리하는 방법은 찾았으나, 아직 전역적으로 적용하지 못함.
 
 </details>
@@ -42,7 +42,7 @@
 - [x] README 작성 및 코드 정리
   - [x] README 작성
   - [x] [React Query 코드 정리 PR 바로가기](https://github.com/vangona/wanted-pre-onboarding-challenge-fe-1/pull/25)
-  - [ ] [Typescript 보완 PR 바로가기]()
+  - [x] [Typescript 보완 PR 바로가기]()
 - [x] ‘개발자로서의 나’ 특징 정의해보기
   - [x] [커리어 상담 주제 바로가기](https://github.com/vangona/wanted-pre-onboarding-challenge-fe-1/issues/24)
   - [x] 특징 정리하기

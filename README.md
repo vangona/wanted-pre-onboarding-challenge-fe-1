@@ -1,73 +1,138 @@
 # 원티드 프리온보딩 FE 챌린지 - CRUD w React Query
 
-## [📽️ 배포물 바로가기(⚠️공사중)](http://54.178.122.226/)
+# [📽️ 배포물 바로가기(⚠️공사중)](http://54.178.122.226/)
 
-## 📚 과제 기록
+# 📚 과제 기록
 
-### 1-1. 리팩토링과 타입스크립트 적용
+## 1-1. 리팩토링과 타입스크립트 적용
 
 - [x] 수업 내용 기반으로 리팩토링
-    - Suspense 적용
-        - [관련 커밋 바로가기](https://github.com/vangona/wanted-pre-onboarding-challenge-fe-1/commit/07451330c2e50afdb7bc47cea5cb404dee39cfc6)
-        - [관련 내용 바로가기](https://github.com/vangona/wanted-pre-onboarding-challenge-fe-1#suspense-%EC%82%AC%EC%9A%A9%EC%9C%BC%EB%A1%9C-%EB%A1%9C%EB%94%A9-%ED%91%9C%EC%8B%9C%ED%95%98%EA%B8%B0)
-    - api 함수에 api 접두사 추가하여 가독성 높임
-        - [관련 커밋 바로가기](https://github.com/vangona/wanted-pre-onboarding-challenge-fe-1/commit/3bfe72585378004a14a414a7acbb302b43166d10)
-        - [관련 내용 바로가기](https://github.com/vangona/wanted-pre-onboarding-challenge-fe-1#api-%ED%95%A8%EC%88%98%EB%AA%85-%EC%95%9E%EC%97%90-api%EB%A5%BC-%EB%B6%99%EC%97%AC%EC%A4%8C)
+  - Suspense 적용
+    - [관련 커밋 바로가기](https://github.com/vangona/wanted-pre-onboarding-challenge-fe-1/commit/07451330c2e50afdb7bc47cea5cb404dee39cfc6)
+    - [관련 내용 바로가기](https://github.com/vangona/wanted-pre-onboarding-challenge-fe-1#suspense-%EC%82%AC%EC%9A%A9%EC%9C%BC%EB%A1%9C-%EB%A1%9C%EB%94%A9-%ED%91%9C%EC%8B%9C%ED%95%98%EA%B8%B0)
+  - api 함수에 api 접두사 추가하여 가독성 높임
+    - [관련 커밋 바로가기](https://github.com/vangona/wanted-pre-onboarding-challenge-fe-1/commit/3bfe72585378004a14a414a7acbb302b43166d10)
+    - [관련 내용 바로가기](https://github.com/vangona/wanted-pre-onboarding-challenge-fe-1#api-%ED%95%A8%EC%88%98%EB%AA%85-%EC%95%9E%EC%97%90-api%EB%A5%BC-%EB%B6%99%EC%97%AC%EC%A4%8C)
 - [ ] 타입스크립트 적용
-    - EventHandler를 타입 단언 없이 처리하는 방법은 찾았으나, 아직 전역적으로 적용하지 못함.
+  - EventHandler를 타입 단언 없이 처리하는 방법은 찾았으나, 아직 전역적으로 적용하지 못함.
 
-### 1-2. Redux 뜯어보기, React Query 사용해보기
+## 1-2. Redux 뜯어보기, React Query 사용해보기
 
 - [x] Redux 소스코드 분석해서 나만의 Redux 구현하기
-    - [관련 커밋 바로가기](https://github.com/vangona/wanted-pre-onboarding-challenge-fe-1/commit/5ba6540dc69474ef684520950fece459c102ed67)
-    - [관련 내용 바로가기](https://github.com/vangona/wanted-pre-onboarding-challenge-fe-1#Redux-%EB%9C%AF%EC%96%B4%EB%B3%B4%EA%B8%B0)
+  - [관련 커밋 바로가기](https://github.com/vangona/wanted-pre-onboarding-challenge-fe-1/commit/5ba6540dc69474ef684520950fece459c102ed67)
+  - [관련 내용 바로가기](https://github.com/vangona/wanted-pre-onboarding-challenge-fe-1#Redux-%EB%9C%AF%EC%96%B4%EB%B3%B4%EA%B8%B0)
 - [x] API React Query로 리팩토링하기
-    - [관련 소스코드 바로가기](https://github.com/vangona/wanted-pre-onboarding-challenge-fe-1/tree/main/src/hooks) 
-    - [관련 내용 바로가기](https://github.com/vangona/wanted-pre-onboarding-challenge-fe-1#%EB%A6%AC%EC%95%A1%ED%8A%B8-%EC%BF%BC%EB%A6%AC%EB%A5%BC-%ED%86%B5%ED%95%B4-%EC%83%81%ED%83%9C-%EA%B4%80%EB%A6%AC-%EB%B3%B5%EC%9E%A1%EB%8F%84-%EB%82%AE%EC%B6%94%EA%B8%B0)
+  - [관련 소스코드 바로가기](https://github.com/vangona/wanted-pre-onboarding-challenge-fe-1/tree/main/src/hooks)
+  - [관련 내용 바로가기](https://github.com/vangona/wanted-pre-onboarding-challenge-fe-1#%EB%A6%AC%EC%95%A1%ED%8A%B8-%EC%BF%BC%EB%A6%AC%EB%A5%BC-%ED%86%B5%ED%95%B4-%EC%83%81%ED%83%9C-%EA%B4%80%EB%A6%AC-%EB%B3%B5%EC%9E%A1%EB%8F%84-%EB%82%AE%EC%B6%94%EA%B8%B0)
 
-## 📋 프로젝트 개요
+## 1-3. README 작성, 나는 어떤 개발자인가?
+
+- [ ] README 작성 및 코드 정리
+  - [x] README 작성
+  - [ ] [코드 정리 관련 PR 바로가기]()
+- [ ] ‘개발자로서의 나’ 특징 정의해보기
+  - [x] 특징 정리하기
+  - [ ] 커리어 상담 주제 정리해서 요청드리기
+
+# 📋 프로젝트 개요
 
 - [원티드 프리온보딩 FE 챌린지](https://github.com/starkoora/wanted-pre-onboarding-challenge-fe-1-api)의 과제로 구현함.
 - 지속적으로 개선시키며 최신 기술을 실험해볼 수 있는 todolist CRUD w React Query
 - 동기부여 할 수 있는 이미지들을 배경이미지로 사용하여 할 일에 대해 동기부여 될 수 있도록 디자인하기
 
-### todolist 기능 소개
+# 🏗️ todolist 기능 소개
 
-- 현재 알 수 없는 npm network 에러로 인해 실행이 안되고 있어서 이미지 첨부를 못했습니다. 빠른 시일 내에 복구하겠습니다.
+## 🔒 인증
 
-### 실행 방법
+### 회원가입
 
+![유효성 검증 및 회원가입](https://user-images.githubusercontent.com/69471032/213385071-b657af26-3db9-4ae9-beb2-dd820a90f15c.gif)
 
-- 현재 알 수 없는 npm network 에러로 인해 실행이 안되고 있습니다. 빠른 시일 내에 복구하겠습니다.
+- 회원가입 창을 구현했습니다.
+- 현재 email은 @과 .이 포함될 수 있도록, password는 8자리 이상이 넘어가도록 구현해두었습니다.
+- 유효성 검사에 통과하지 않으면 버튼을 클릭할 수 없도록 구현하였습니다.
+
+![회원가입 예외처리](https://user-images.githubusercontent.com/69471032/213385061-91573e26-53c4-450f-8b61-b64c531a82ba.gif)
+
+- api에서 받은 에러의 detail이나 클라이언트단에서 확인된 에러를 출력해줄 수 있는 영역을 만들어주었습니다.
+
+### 로그인
+
+![로그인](https://user-images.githubusercontent.com/69471032/213385025-2c7724b8-f20d-4179-90fa-6f44c112a180.gif)
+
+- 로그인 할 수 있도록 구현했습니다.
+- 각 Route에서는 JWT 토큰을 확인하여 로그인이 되면 자동으로 todo로 이동하고, 로그아웃 상태라면 auth로 이동할 수 있도록 구현 하였습니다.
+- 현재 api가 JWT를 Cookie에 세팅해주지 않기 때문에 localstorage에 JWT를 저장하고 정보를 가져올 수 있는 유틸 함수를 구현하여 처리하였습니다.
+- 클라이언트에서 JWT의 Key 값을 가지고 있는 것은 비정상적이라고 생각하여, 유효성 검증은 JWT가 빈 문자열인지만 검증하고 있습니다.
+
+## 📄 할 일 CRUD
+
+### 할 일 목록 & 상세보기
+
+![사이드바 열기, 상세보기](https://user-images.githubusercontent.com/69471032/213385065-cc6c3af7-c705-4dc7-964f-dee5f52a369a.gif)
+
+- 개인적으로 웹사이트를 바탕화면처럼 이용하고자 할 일 목록을 사이드바로 구현하였습니다.
+- 사이드바의 할 일 목록 중 하나를 클릭하면, 메모지의 형태로 표시될 수 있도록 구현하였습니다.
+- URL 주소로 Query Parameter를 주고, 이에 따라서 id에 맞는 todo를 가져와서 그려주는 방식을 통해서 새로고침하더라도 같은 상태가 유지될 수 있도록 하였습니다.
+- 또한 이런 방식을 사용한다면 할 일 목록이 많아졌을 때, 할 일 목록은 메타데이터로 가져오고 상세보기는 전체 데이터를 가져오는 방식으로 최적화도 가능합니다.
+
+### 할 일 추가하기
+
+![할 일 추가하기](https://user-images.githubusercontent.com/69471032/213385056-300d8f6f-6124-491f-bbca-14b7fa6f1850.gif)
+
+- 할 일을 추가할 수 있도록 모달창을 구현했습니다.
+
+### 할 일 수정하기
+
+![할 일 수정하기](https://user-images.githubusercontent.com/69471032/213385052-ad61babd-a566-4fa3-866b-2caa1144a32b.gif)
+
+- 할 일을 수정할 수 있도록 구현했습니다.
+- 가볍게 사용하는 todolist가 될 수 있도록, 수정하기가 간편하길 바라여서 따로 form을 만들지 않고 contentEditable을 toggle하여 수정의 UX과 구현로직 모두 간단하도록 구현했습니다.
+
+### 할 일 삭제하기
+
+![할 일 삭제하기](https://user-images.githubusercontent.com/69471032/213385076-229f9a31-5280-4678-b3ea-df06223b76dd.gif)
+
+- 할 일 목록에서 간단히 할 일을 삭제할 수 있는 버튼을 구현했습니다.
+- 할 일 삭제에서는 confirm 창을 띄워 유저의 의견을 재확인하도록 구현하였습니다.
+
+### 할 일 상세보기 투명도 변경 및 상세보기 닫기
+
+![할 일 상세보기 투명도 변경](https://user-images.githubusercontent.com/69471032/213385047-664a76fe-dff3-4cc2-9dda-4209f524265d.gif)
+
+- 할 일 상세보기의 투명도를 조절하여 바탕화면으로 쓰기 좋도록 하였습니다.
+- 투명도가 변경될 때마다 리렌더링이 일어나지 않도록 useMemo를 통해 최적화하였습니다.
+- 상세보기를 닫으면 URL의 Query Parameter가 없어질 수 있도록하여 새로고침 하더라도 상태가 유지될 수 있도록 구현하였습니다.
+
+### 배경화면 변경하기
+
+![배경화면 변경](https://user-images.githubusercontent.com/69471032/213385033-41f458a0-a29b-442d-b184-f99c8aea5818.gif)
+
+- 따로 새로고침하지 않더라도 배경화면만 변경할 수 있도록 구현하였습니다.
+
+# 👟 실행 방법
+
+### 코드 실행 방법
+
+- [백엔드 코드저장소](https://github.com/starkoora/wanted-pre-onboarding-challenge-fe-1-api)
 
 ```bash
-# 공사중
+#FE
+npm install
+npm start
+
+#BE
+yarn
+yarn start
 ```
 
-### [디자인 Figma](https://www.figma.com/file/IiY1rAJDZ0jCsmK2CwwHkA/wanted-preonboarding-fe-1?t=LHTLyi3zJ4TgUysy-0)
+### FE 단위 테스트
 
-## ⚙️ 기술스택
-### Typescript, eslint, prettier
+- 현재 의존성 충돌로 테스트 실행이 어렵습니다.
 
-- 코드 퀄리티와 잠재적인 위험을 줄이기 위해 사용함
+## [디자인 Figma](https://www.figma.com/file/IiY1rAJDZ0jCsmK2CwwHkA/wanted-preonboarding-fe-1?t=LHTLyi3zJ4TgUysy-0)
 
-### React, Styled-component
-
-- 선언적인 프론트엔드 컴포넌트 프로그래밍을 위해 사용함
-
-### React Query
-
-- 서버 상태 관리를 통해 상태의 복잡도를 낮추기위해 사용함
-
-### jest
-
-- 이후 checkIsValidEmail, checkIsValidPassword, checkIsValidToken 등 유틸성의 비즈니스 로직을 개선시키기 위해 단위테스트를 작성함.
-
-### craco
-
-- 절대경로를 통한 안정적인 모듈 import를 위해 typescript path alias를 적용, 이를 위해 craco 사용함.
-
-## 👷 프로젝트 기능 요구사항 및 기능 소개
+# 👷 프로젝트 기능 요구사항
 
 <details>
 <summary>
@@ -136,7 +201,94 @@
 
 </details>
 
-## 🤔 기술적인 고민들
+# ⚙️ 기술스택
+
+[package.json 바로가기](https://github.com/vangona/wanted-pre-onboarding-challenge-fe-1/blob/main/package.json)
+
+### Typescript, eslint, prettier
+
+- 코드 퀄리티와 잠재적인 위험을 줄이기 위해 사용함
+
+### React, Styled-component
+
+- 선언적인 프론트엔드 컴포넌트 프로그래밍을 위해 사용함
+
+### React Query
+
+- 서버 상태 관리를 통해 상태의 복잡도를 낮추기위해 사용함
+
+### jest
+
+- 이후 checkIsValidEmail, checkIsValidPassword, checkIsValidToken 등 유틸성의 비즈니스 로직을 개선시키기 위해 단위테스트를 작성함.
+
+### craco
+
+- 절대경로를 통한 안정적인 모듈 import를 위해 typescript path alias를 적용, 이를 위해 craco 사용함.
+
+### redux, react-redux, redux-toolkit
+
+- redux의 구조를 확인하고 직접 만들어보기 위해 설치됨. 구조 확인 후 삭제 예정.
+
+# 📁 폴더 구조
+
+```
+wanted-pre-onboarding-challenge-fe-1
+├─ 📁 public
+├─ 📁 src
+│  ├─ 📁 apis  # api와 통신하는 계층 폴더입니다.
+│  ├─ 📁 assets  # 번들링 되어야하는 자산을 모아둔 폴더입니다.
+│  │  └─ 📁 img
+│  ├─ 📁 common  # 전역으로 사용되는 파일입니다. 현재는 상수 파일이 있습니다.
+│  ├─ 📁 components  # route 페이지를 구성하는 컴포넌트 들입니다. route별, 공통 컴포넌트가 있습니다.
+│  │  ├─ 📁 auth
+│  │  ├─ 📁 common
+│  │  ├─ 📁 home
+│  │  └─ App.tsx  # App 전체를 구성하는 컴포넌트입니다. 내부에 Router가 있습니다.
+│  ├─ 📁 core  # redux를 직접 만들고 있는 폴더입니다. react-redux까지 만들어서 사용할 예정입니다.
+│  │  └─ 📁 my-redux
+│  ├─ 📁 hooks  # 커스텀 hook이 모여있는 폴더입니다. 현재는 mutation과 query가 모여있습니다.
+│  │  ├─ 📁 mutations
+│  │  └─ 📁 queries
+│  ├─ 📁 routes  # 각 route의 페이지입니다.
+│  │  ├─ Auth.tsx
+│  │  └─ Home.tsx
+│  ├─ 📁 styles  # styled-components 파일이 모여있는 폴더입니다. 컴포넌트 폴더와 동일하게 구분했습니다.
+│  │  ├─ 📁 auth
+│  │  ├─ 📁 common
+│  │  ├─ 📁 home
+│  │  └─ Global.style.tsx  # 전역 스타일 파일입니다.
+│  ├─ 📁 tests  # test 코드가 있는 폴더입니다. 현재는 유효성 검사 로직에 대한 테스트코드가 있습니다.
+│  ├─ 📁 types  # 타입 선언 폴더입니다. api response, todo type이 선언되어있습니다.
+│  ├─ 📁 utils  # 유틸성 함수를 위한 폴더입니다. 유효성검사, localstorage에서 jwt 가져오기가 있습니다.
+│  └─ index.tsx
+├─ ⚙️ .eslintignore
+├─ ⚙️ .eslintrc.json
+├─ ⚙️ .gitignore
+├─ ⚙️ .prettierrc
+├─ README.md
+├─ ⚙️ craco.config.js
+├─ ⚙️ package-lock.json
+├─ ⚙️ package.json
+├─ ⚙️ tsconfig.json
+└─ ⚙️ tsconfig.paths.json
+
+```
+
+# ⚠️ 미해결 이슈 & 개선 가능 사항
+
+### [미해결 이슈 바로가기](https://github.com/vangona/wanted-pre-onboarding-challenge-fe-1/issues)
+
+- 디테일한 구현 부분들이나 예외처리에 대해서 아직 완성되지 못했습니다.
+- 반응형을 고려하여 필요한 부분에 flex와 rem을 사용하여 만들었지만, 아직 반응형으로 구현되지 않은 상태입니다.
+- 이후 유효한 token이나 email, password에 대해 추가로 검증할 수 있는 규칙을 정할 예정입니다.
+- 또한 alret창을 개선시키고, error가 뜰 때마다 레이아웃 변경이 일어나지 않도록 Toast 창을 구현할 예정입니다.
+- [현재의 api](https://github.com/starkoora/wanted-pre-onboarding-challenge-fe-1-api)로 구현할 수 없는 기능들을 api를 추가하여 구현할 예정입니다.
+  - 할 일 마감기한 추가
+  - 할 일 소요시간 추가
+  - drag & drop을 통한 할 일 상태 변경
+- [이외에 개선이 가능한 부분들](https://github.com/vangona/wanted-pre-onboarding-challenge-fe-1/issues?q=is%3Aopen+is%3Aissue+label%3Aenhancement)을 개선하여 완성도를 높일 예정입니다.
+
+# 🤔 기술적인 고민들
 
 ### LoginForm과 RegisterForm은 분리해야할까?
 
@@ -164,7 +316,7 @@
 - portal을 만든다는건 SPA에 대해서는 안티패턴이며 상태의 흐름이 여러 갈래로 갈리기 때문에 최대한 만들지 않는 것이 좋다고 생각한다.
 - todoNote는 굳이 portal을 만들며 얻을 수 있는 이점이 없다고 생각했다.
 
-## ⚒️ 리팩토링
+# ⚒️ 리팩토링
 
 ### ListSection에서 TodoListItem 분리
 
@@ -184,7 +336,7 @@
 - 또한 캐싱을 통해서 네트워크 요청량도 줄일 수 있다는 장점이 있다.
 - 리팩토링 하고 나니 전체적으로 상태관리가 훨씬 용이해졌고, 비즈니스 로직이 동작하는 곳에 가까워져서 로직을 관리하기가 더욱 편해졌다.
 - 이에따라 props drilling으로 상태를 관리해야 했기에 필요이상으로 많은 상태를 관리하던 route 컴포넌트들의 크기가 훨씬 작아졌다.
-    - 가장 길던 Home 컴포넌트를 103 lines에서 47 lines로 50% 이상 줄임.
+  - 가장 길던 Home 컴포넌트를 103 lines에서 47 lines로 50% 이상 줄임.
 
 ### Suspense 사용으로 로딩 표시하기
 
@@ -214,7 +366,7 @@
 - 단번에 파악하기 어려운 것은 react-redux나 redux-toolkit과 관련된 것들이었다.
 - react-redux나 rredux-toolkit을 간단히 뜯어봤는데, react-redux 정도는 hook으로 구현할 수 있을 것 같고 학습에 도움이 될 것 같다는 생각이 들어서 다음번에는 react-redux 형태로 현재 todoNote의 opacity를 제어해볼까한다.
 
-## 🚀 트러블 슈팅
+# 🚀 트러블 슈팅
 
 ### createBrowserRouter에게 userData 넘겨주기
 

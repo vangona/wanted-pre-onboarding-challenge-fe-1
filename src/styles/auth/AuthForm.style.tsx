@@ -69,13 +69,14 @@ export const SubmitButton = styled.button`
   :active {
     transform: scale(0.98);
   }
+
   :disabled {
     background-color: gray;
     :hover {
       cursor: default;
     }
     :active {
-      transform: scale(1);
+      transform: unset;
     }
   }
 `;

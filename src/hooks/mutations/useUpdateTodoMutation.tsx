@@ -2,8 +2,10 @@ import apiUpdateTodo from '@apis/apiUpdateTodo';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import getUserToken from '@utils/getUserToken';
 import { REACT_QUERY_KEY } from '@constants';
-import type { UpdateTodoResponseBody } from '#types/ApiResponseTypes';
-import type { Todo } from '#types/TodoTypes';
+import type {
+  UpdateTodoResponseBody,
+  GetTodosResponseBody,
+} from '#types/ApiResponseTypes';
 
 interface UpdateTodoProps {
   todoId: string;
@@ -24,20 +26,11 @@ const useUpdateTodoMutation = () => {
   ) => {
     if (!updateTodoResponseBody) return;
 
-    queryClient.setQueryData(
-      [REACT_QUERY_KEY.GET_TODOS],
-      (old: Todo[] | undefined) => {
-        if (!old) return [updateTodoResponseBody.data];
-
-        const updatedTodos = old.map((todo) => {
-          if (todo.id === updateTodoResponseBody.data.id)
-            return updateTodoResponseBody.data;
-          return todo;
-        });
-
-        return updatedTodos;
-      },
-    );
+    queryClient.invalidateQueries([REACT_QUERY_KEY.GET_TODOS, userToken]);
+    queryClient.invalidateQueries([
+      REACT_QUERY_KEY.GET_TODO_BY_ID,
+      updateTodoResponseBody.data.id,
+    ]);
 
     alert(
       `할 일이 성공적으로 수정되었습니다! ${updateTodoResponseBody.data.title}`,

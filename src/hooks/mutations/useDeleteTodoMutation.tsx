@@ -2,8 +2,10 @@ import apiDeleteTodo from '@apis/apiDeleteTodo';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import getUserToken from '@utils/getUserToken';
 import { REACT_QUERY_KEY } from '@constants';
-import type { DeleteTodoResponseBody } from '#types/ApiResponseTypes';
-import type { Todo } from '#types/TodoTypes';
+import type {
+  GetTodosResponseBody,
+  DeleteTodoResponseBody,
+} from '#types/ApiResponseTypes';
 
 interface DeleteTodoProps {
   todoId: string;
@@ -17,17 +19,8 @@ const useDeleteTodoMutation = () => {
     return apiDeleteTodo(todoId, userToken);
   };
 
-  const updateTodos = (
-    _: DeleteTodoResponseBody | undefined,
-    { todoId }: DeleteTodoProps,
-  ) => {
-    queryClient.setQueryData(
-      [REACT_QUERY_KEY.GET_TODOS],
-      (old: Todo[] | undefined) => {
-        if (!old) return [];
-        return old.filter((todo) => todo.id === todoId);
-      },
-    );
+  const updateTodos = () => {
+    queryClient.invalidateQueries([REACT_QUERY_KEY.GET_TODOS, userToken]);
 
     alert('할 일이 성공적으로 삭제되었습니다!');
   };

@@ -6,6 +6,7 @@ import Auth from '@routes/Auth';
 import Home from '@routes/Home';
 import GlobalStyle from '@styles/Global.style';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import checkIsValidToken from '@utils/checkIsValidToken';
 import getUserToken from '@utils/getUserToken';
 import { Reset } from 'styled-reset';
@@ -46,6 +47,7 @@ const App = () => {
       <Reset />
       <GlobalStyle />
       <QueryClientProvider client={queryClient}>
+        <ReactQueryDevtools initialIsOpen={false} />
         <RouterProvider router={router} />
       </QueryClientProvider>
     </>

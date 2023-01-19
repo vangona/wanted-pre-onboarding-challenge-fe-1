@@ -2,9 +2,10 @@ import apiCreateTodo from '@apis/apiCreateTodo';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import getUserToken from '@utils/getUserToken';
 import { REACT_QUERY_KEY } from '@constants';
-import { CreateTodoResponseBody } from '#types/ApiResponseTypes';
-import { Todo } from '#types/TodoTypes';
-
+import {
+  CreateTodoResponseBody,
+  GetTodosResponseBody,
+} from '#types/ApiResponseTypes';
 interface CreateTodoProps {
   todoTitle: string;
   todoContent: string;
@@ -23,14 +24,7 @@ const useCreateTodoMutation = () => {
   ) => {
     if (!createTodoResponseBody) return;
 
-    queryClient.setQueryData(
-      [REACT_QUERY_KEY.GET_TODOS],
-      (old: Todo[] | undefined) => {
-        if (!old) return [createTodoResponseBody.data];
-
-        return [...old, createTodoResponseBody.data];
-      },
-    );
+    queryClient.invalidateQueries([REACT_QUERY_KEY.GET_TODOS, userToken]);
 
     alert(
       `할 일이 성공적으로 추가되었습니다! ${createTodoResponseBody.data.title}`,
@@ -44,6 +38,9 @@ const useCreateTodoMutation = () => {
   >({
     mutationFn: createTodo,
     onSuccess: updateTodos,
+    onError: (error) => {
+      alert(error.message);
+    },
   });
 
   return mutation;

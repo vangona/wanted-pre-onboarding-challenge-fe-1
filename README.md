@@ -39,9 +39,10 @@
 
 ## 1-3. README 작성, 나는 어떤 개발자인가?
 
-- [ ] README 작성 및 코드 정리
+- [x] README 작성 및 코드 정리
   - [x] README 작성
-  - [ ] [코드 정리 관련 PR 바로가기]()
+  - [x] [React Query 코드 정리 PR 바로가기](https://github.com/vangona/wanted-pre-onboarding-challenge-fe-1/pull/25)
+  - [ ] [Typescript 보완 PR 바로가기]()
 - [x] ‘개발자로서의 나’ 특징 정의해보기
   - [x] [커리어 상담 주제 바로가기](https://github.com/vangona/wanted-pre-onboarding-challenge-fe-1/issues/24)
   - [x] 특징 정리하기
@@ -226,9 +227,10 @@ yarn start
 
 - 선언적인 프론트엔드 컴포넌트 프로그래밍을 위해 사용함
 
-### React Query
+### React Query, React Query Devtools
 
 - 서버 상태 관리를 통해 상태의 복잡도를 낮추기위해 사용함
+- 상태를 확인하기 위해 devtools를 사용함.
 
 ### jest
 

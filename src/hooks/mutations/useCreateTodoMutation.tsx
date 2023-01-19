@@ -47,6 +47,9 @@ const useCreateTodoMutation = () => {
   >({
     mutationFn: createTodo,
     onSuccess: updateTodos,
+    onError: (error) => {
+      alert(error.message);
+    },
   });
 
   return mutation;

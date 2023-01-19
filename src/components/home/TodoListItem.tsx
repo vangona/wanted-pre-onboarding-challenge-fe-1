@@ -13,8 +13,10 @@ const TodoListItem = ({ todo }: TodoListItemProps) => {
   const setSearchParams = useSearchParams()[1];
   const { mutate: deleteTodo } = useDeleteTodoMutation();
 
-  const handleChangeCheckbox: React.ChangeEventHandler = (e) => {
-    const target = e.target as HTMLInputElement;
+  const handleChangeCheckbox: React.ChangeEventHandler<HTMLInputElement> = (
+    e,
+  ) => {
+    const target = e.target;
     setIsFinish(target.checked);
   };
 

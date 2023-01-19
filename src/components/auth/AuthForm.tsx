@@ -19,18 +19,24 @@ const AuthForm = ({ isRegister }: AuthFormProps) => {
   const [isValidForm, setIsValidForm] = useState(false);
   const [error, setError] = useState('');
 
-  const handleChangeEmail: React.ChangeEventHandler = (event) => {
-    const target = event.target as HTMLInputElement;
+  const handleChangeEmail: React.ChangeEventHandler<HTMLInputElement> = (
+    event,
+  ) => {
+    const target = event.target;
     setEmail(target.value);
   };
 
-  const handleChangePassword: React.ChangeEventHandler = (event) => {
-    const target = event.target as HTMLInputElement;
+  const handleChangePassword: React.ChangeEventHandler<HTMLInputElement> = (
+    event,
+  ) => {
+    const target = event.target;
     setPassword(target.value);
   };
 
-  const handleChangeRePassword: React.ChangeEventHandler = (event) => {
-    const target = event.target as HTMLInputElement;
+  const handleChangeRePassword: React.ChangeEventHandler<HTMLInputElement> = (
+    event,
+  ) => {
+    const target = event.target;
     setRepassword(target.value);
   };
 

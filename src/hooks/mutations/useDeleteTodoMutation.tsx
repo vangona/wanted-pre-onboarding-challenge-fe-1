@@ -2,10 +2,7 @@ import apiDeleteTodo from '@apis/apiDeleteTodo';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import getUserToken from '@utils/getUserToken';
 import { REACT_QUERY_KEY } from '@constants';
-import type {
-  GetTodosResponseBody,
-  DeleteTodoResponseBody,
-} from '#types/ApiResponseTypes';
+import type { DeleteTodoResponseBody } from '#types/ApiResponseTypes';
 
 interface DeleteTodoProps {
   todoId: string;

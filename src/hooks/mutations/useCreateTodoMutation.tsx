@@ -2,9 +2,10 @@ import apiCreateTodo from '@apis/apiCreateTodo';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import getUserToken from '@utils/getUserToken';
 import { REACT_QUERY_KEY } from '@constants';
-import { CreateTodoResponseBody } from '#types/ApiResponseTypes';
-import { Todo } from '#types/TodoTypes';
-
+import {
+  CreateTodoResponseBody,
+  GetTodosResponseBody,
+} from '#types/ApiResponseTypes';
 interface CreateTodoProps {
   todoTitle: string;
   todoContent: string;
@@ -24,11 +25,13 @@ const useCreateTodoMutation = () => {
     if (!createTodoResponseBody) return;
 
     queryClient.setQueryData(
-      [REACT_QUERY_KEY.GET_TODOS],
-      (old: Todo[] | undefined) => {
-        if (!old) return [createTodoResponseBody.data];
+      [REACT_QUERY_KEY.GET_TODOS, userToken],
+      (old: GetTodosResponseBody | undefined) => {
+        if (!old) return { data: [createTodoResponseBody.data] };
 
-        return [...old, createTodoResponseBody.data];
+        const newData = { data: [...old.data, createTodoResponseBody.data] };
+
+        return newData;
       },
     );
 

@@ -4,7 +4,12 @@
 
 # 📚 과제 기록
 
-## 1-1. 리팩토링과 타입스크립트 적용
+<details>
+<summary>
+
+<h2>1-1. 리팩토링과 타입스크립트 적용</h2>
+
+</summary>
 
 - [x] 수업 내용 기반으로 리팩토링
   - Suspense 적용
@@ -16,7 +21,12 @@
 - [ ] 타입스크립트 적용
   - EventHandler를 타입 단언 없이 처리하는 방법은 찾았으나, 아직 전역적으로 적용하지 못함.
 
-## 1-2. Redux 뜯어보기, React Query 사용해보기
+</details>
+
+<details>
+<summary>
+<h2>1-2. Redux 뜯어보기, React Query 사용해보기</h2>
+</summary>
 
 - [x] Redux 소스코드 분석해서 나만의 Redux 구현하기
   - [관련 커밋 바로가기](https://github.com/vangona/wanted-pre-onboarding-challenge-fe-1/commit/5ba6540dc69474ef684520950fece459c102ed67)
@@ -24,6 +34,8 @@
 - [x] API React Query로 리팩토링하기
   - [관련 소스코드 바로가기](https://github.com/vangona/wanted-pre-onboarding-challenge-fe-1/tree/main/src/hooks)
   - [관련 내용 바로가기](https://github.com/vangona/wanted-pre-onboarding-challenge-fe-1#%EB%A6%AC%EC%95%A1%ED%8A%B8-%EC%BF%BC%EB%A6%AC%EB%A5%BC-%ED%86%B5%ED%95%B4-%EC%83%81%ED%83%9C-%EA%B4%80%EB%A6%AC-%EB%B3%B5%EC%9E%A1%EB%8F%84-%EB%82%AE%EC%B6%94%EA%B8%B0)
+
+</details>
 
 ## 1-3. README 작성, 나는 어떤 개발자인가?
 

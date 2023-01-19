@@ -2,10 +2,7 @@ import apiCreateTodo from '@apis/apiCreateTodo';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import getUserToken from '@utils/getUserToken';
 import { REACT_QUERY_KEY } from '@constants';
-import {
-  CreateTodoResponseBody,
-  GetTodosResponseBody,
-} from '#types/ApiResponseTypes';
+import { CreateTodoResponseBody } from '#types/ApiResponseTypes';
 interface CreateTodoProps {
   todoTitle: string;
   todoContent: string;

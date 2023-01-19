@@ -2,10 +2,7 @@ import apiUpdateTodo from '@apis/apiUpdateTodo';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import getUserToken from '@utils/getUserToken';
 import { REACT_QUERY_KEY } from '@constants';
-import type {
-  UpdateTodoResponseBody,
-  GetTodosResponseBody,
-} from '#types/ApiResponseTypes';
+import type { UpdateTodoResponseBody } from '#types/ApiResponseTypes';
 
 interface UpdateTodoProps {
   todoId: string;

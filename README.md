@@ -39,9 +39,10 @@
 
 ## 1-3. README 작성, 나는 어떤 개발자인가?
 
-- [ ] README 작성 및 코드 정리
+- [x] README 작성 및 코드 정리
   - [x] README 작성
-  - [ ] [코드 정리 관련 PR 바로가기]()
+  - [x] [React Query 코드 정리 PR 바로가기](https://github.com/vangona/wanted-pre-onboarding-challenge-fe-1/pull/25)
+  - [ ] [Typescript 보완 PR 바로가기]()
 - [x] ‘개발자로서의 나’ 특징 정의해보기
   - [x] [커리어 상담 주제 바로가기](https://github.com/vangona/wanted-pre-onboarding-challenge-fe-1/issues/24)
   - [x] 특징 정리하기

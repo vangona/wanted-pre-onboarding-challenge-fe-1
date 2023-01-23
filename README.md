@@ -1,6 +1,6 @@
 # 원티드 프리온보딩 FE 챌린지 - CRUD w React Query
 
-# [📽️ 배포물 바로가기(⚠️공사중)](http://54.178.122.226/)
+# [📽️ 배포물 바로가기](http://54.178.122.226/)
 
 # 📚 과제 기록
 
@@ -18,7 +18,7 @@
   - api 함수에 api 접두사 추가하여 가독성 높임
     - [관련 커밋 바로가기](https://github.com/vangona/wanted-pre-onboarding-challenge-fe-1/commit/3bfe72585378004a14a414a7acbb302b43166d10)
     - [관련 내용 바로가기](https://github.com/vangona/wanted-pre-onboarding-challenge-fe-1#api-%ED%95%A8%EC%88%98%EB%AA%85-%EC%95%9E%EC%97%90-api%EB%A5%BC-%EB%B6%99%EC%97%AC%EC%A4%8C)
-- [ ] 타입스크립트 적용
+- [x] 타입스크립트 적용
   - EventHandler를 타입 단언 없이 처리하는 방법은 찾았으나, 아직 전역적으로 적용하지 못함.
 
 </details>
@@ -42,7 +42,7 @@
 - [x] README 작성 및 코드 정리
   - [x] README 작성
   - [x] [React Query 코드 정리 PR 바로가기](https://github.com/vangona/wanted-pre-onboarding-challenge-fe-1/pull/25)
-  - [ ] [Typescript 보완 PR 바로가기]()
+  - [x] [Typescript 보완 PR 바로가기](https://github.com/vangona/wanted-pre-onboarding-challenge-fe-1/pull/26)
 - [x] ‘개발자로서의 나’ 특징 정의해보기
   - [x] [커리어 상담 주제 바로가기](https://github.com/vangona/wanted-pre-onboarding-challenge-fe-1/issues/24)
   - [x] 특징 정리하기
@@ -63,12 +63,12 @@
 ![유효성 검증 및 회원가입](https://user-images.githubusercontent.com/69471032/213385071-b657af26-3db9-4ae9-beb2-dd820a90f15c.gif)
 
 - 회원가입 창을 구현했습니다.
-- 현재 email은 @과 .이 포함될 수 있도록, password는 8자리 이상이 넘어가도록 구현해두었습니다.
+- 현재 email은 @과 .이 포함될 수 있도록, password는 8자리 이상이 넘어가도록 유효성 검사를 구현해두었습니다.
 - 유효성 검사에 통과하지 않으면 버튼을 클릭할 수 없도록 구현하였습니다.
 
 ![회원가입 예외처리](https://user-images.githubusercontent.com/69471032/213385061-91573e26-53c4-450f-8b61-b64c531a82ba.gif)
 
-- api에서 받은 에러의 detail이나 클라이언트단에서 확인된 에러를 출력해줄 수 있는 영역을 만들어주었습니다.
+- api에서 받은 에러의 세부사항이나 클라이언트단에서 확인된 에러를 출력해줄 수 도록, 에러 영역을 구현했습니다.
 
 ### 로그인
 
@@ -85,7 +85,7 @@
 
 ![사이드바 열기, 상세보기](https://user-images.githubusercontent.com/69471032/213385065-cc6c3af7-c705-4dc7-964f-dee5f52a369a.gif)
 
-- 개인적으로 웹사이트를 바탕화면처럼 이용하고자 할 일 목록을 사이드바로 구현하였습니다.
+- 웹사이트를 바탕화면처럼 이용하고자 할 일 목록을 사이드바로 구현하였습니다.
 - 사이드바의 할 일 목록 중 하나를 클릭하면, 메모지의 형태로 표시될 수 있도록 구현하였습니다.
 - URL 주소로 Query Parameter를 주고, 이에 따라서 id에 맞는 todo를 가져와서 그려주는 방식을 통해서 새로고침하더라도 같은 상태가 유지될 수 있도록 하였습니다.
 - 또한 이런 방식을 사용한다면 할 일 목록이 많아졌을 때, 할 일 목록은 메타데이터로 가져오고 상세보기는 전체 데이터를 가져오는 방식으로 최적화도 가능합니다.

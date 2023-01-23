@@ -31,4 +31,4 @@ export const Z_INDEX = {
 };
 
 // 배경 이미지
-export const BG_IMG_COUNT = 26;
+export const BG_IMG_COUNT = 12;

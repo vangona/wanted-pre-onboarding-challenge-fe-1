@@ -19,8 +19,13 @@ export const TodoCheckbox = styled.input`
   }
 `;
 export const TodoTitle = styled.h3<{ isFinish: boolean }>`
+  max-width: 150px;
+  max-height: 1.5rem;
   justify-self: flex-start;
   text-decoration: ${(props) => props.isFinish && 'line-through'};
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
   :hover {
     cursor: pointer;
   }

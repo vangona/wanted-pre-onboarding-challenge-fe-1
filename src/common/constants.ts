@@ -1,5 +1,5 @@
 // API
-export const API_HOST = 'http://localhost:8080';
+export const API_HOST = process.env.REACT_APP_API_HOST;
 export const LOCALSTORAGE_TOKEN_KEY = 'wanted_todo';
 export const METHOD = {
   GET: 'GET',

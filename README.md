@@ -399,3 +399,10 @@ wanted-pre-onboarding-challenge-fe-1
 - 커스텀 선언 파일을 만들고 .jpg 모듈을 declare module을 통해 추가하여 해결
 
 [Using images in React and TypeScript with Webpack 5](https://www.carlrippon.com/using-images-react-typescript-with-webpack5/)
+
+### 긴 제목과 내용에 대응하기
+
+- 이전에는 할 일의 제목이 너무 길거나 내용이 길 경우 넘치는 문제가 발생했었음. 이에 대응하기 위해 text-overflow를 사용함.
+- 제목이 너무 긴 경우 정상적이지 않은 활동이라고 판단하였고 현재 상황에서 따로 리소스를 들여 대응할 필요는 없다고 판단하였음.
+- 따라서 목록에 있는 제목에만 text-overflow를 적용하고 todoNote에 있는 제목에는 따로 overflow 처리를 하지 않음.
+- 다만 내용의 경우는 길이가 길어질 수 있기 때문에 overflow를 통해서 대응함.

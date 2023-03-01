@@ -10,6 +10,7 @@ import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import checkIsValidToken from '@utils/checkIsValidToken';
 import getUserToken from '@utils/getUserToken';
 import { Reset } from 'styled-reset';
+import DailyscrumGroups from '@routes/DailyscrumGroups';
 
 const App = () => {
   const userToken = getUserToken();
@@ -40,6 +41,7 @@ const App = () => {
           }
           errorElement='에러가 발생했어용'
         />
+        <Route path='/dailyscrum/groups' element={<DailyscrumGroups />} />
       </>,
     ),
   );

@@ -1,3 +1,5 @@
+import DailyscrumGroupsColumn from '@components/dailyscrum-groups/DailyscrumGroupsColumn';
+import DailyscrumGroupsContainer from '@components/dailyscrum-groups/DailyscrumGroupsContainer';
 import DailyscrumGroupsLayout from '@components/dailyscrum-groups/DailyscrumGroupsLayout';
 import React, { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
@@ -17,7 +19,20 @@ const DailyscrumGroups = () => {
   }, [searchParams]);
   return (
     <DailyscrumGroupsLayout>
-      더따데 그룹 페이지에용 {queryYear} {queryMonth} {queryWeek}
+      <DailyscrumGroupsContainer>
+        <DailyscrumGroupsColumn
+          groupName='A'
+          members={['김관경', '백도훈', '김세영', '최용석']}
+        />
+        <DailyscrumGroupsColumn
+          groupName='B'
+          members={['김관경', '백도훈', '김세영', '최용석']}
+        />
+        <DailyscrumGroupsColumn
+          groupName='C'
+          members={['김관경', '백도훈', '김세영', '최용석']}
+        />
+      </DailyscrumGroupsContainer>
     </DailyscrumGroupsLayout>
   );
 };

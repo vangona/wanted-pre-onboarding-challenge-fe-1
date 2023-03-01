@@ -27,6 +27,7 @@ const App = () => {
               invalidTo='/auth'
             />
           }
+          errorElement='에러가 발생했어용'
         />
         <Route
           path='/auth'
@@ -37,6 +38,7 @@ const App = () => {
               invalidTo='/'
             />
           }
+          errorElement='에러가 발생했어용'
         />
       </>,
     ),

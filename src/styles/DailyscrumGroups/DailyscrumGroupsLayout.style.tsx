@@ -6,7 +6,9 @@ export const Layout = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 15px;
+  gap: 50px;
 `;
 
-export const Title = styled.h1``;
+export const Title = styled.h1`
+  font-size: 2rem;
+`;

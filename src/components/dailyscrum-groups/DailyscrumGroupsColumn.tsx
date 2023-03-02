@@ -1,4 +1,5 @@
 import React from 'react';
+import campireImg from '@assets/dailyscrum/campfire.png';
 import * as Styled from '@styles/DailyscrumGroups/DailyscrumGroupsColumn.style';
 
 interface DailyscrumGroupsColumnProps {
@@ -14,6 +15,7 @@ const DailyscrumGroupsColumn = ({
   return (
     <Styled.Column>
       <Styled.GroupName>{groupName}</Styled.GroupName>
+      <img src={campireImg} width='150px' />
       <Styled.MemberList>
         {members.map((memberName, index) => (
           <Styled.MemberName key={`${index}-${memberName}`}>

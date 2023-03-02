@@ -32,3 +32,7 @@ export interface DeleteTodoResponseBody {
 export interface ErrorResponseBody {
   details: string;
 }
+
+export interface GetGroupsResponseBody {
+  data: Record<string, string[]>;
+}

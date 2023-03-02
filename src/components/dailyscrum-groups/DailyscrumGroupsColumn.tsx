@@ -3,13 +3,14 @@ import * as Styled from '@styles/DailyscrumGroups/DailyscrumGroupsColumn.style';
 
 interface DailyscrumGroupsColumnProps {
   groupName: string;
-  members: string[];
+  members: string[] | undefined;
 }
 
 const DailyscrumGroupsColumn = ({
   groupName,
   members,
 }: DailyscrumGroupsColumnProps) => {
+  if (members === undefined) return <></>;
   return (
     <Styled.Column>
       <Styled.GroupName>{groupName}</Styled.GroupName>

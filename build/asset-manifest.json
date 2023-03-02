@@ -1,0 +1,11 @@
+{
+  "files": {
+    "main.js": "/static/js/main.bd5aacf2.js",
+    "static/media/campfire.png": "/static/media/campfire.5f5408abc50fb7a0fe38.png",
+    "index.html": "/index.html",
+    "main.bd5aacf2.js.map": "/static/js/main.bd5aacf2.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.bd5aacf2.js"
+  ]
+}

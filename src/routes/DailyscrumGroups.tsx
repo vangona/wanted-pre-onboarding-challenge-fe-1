@@ -10,6 +10,7 @@ const DailyscrumGroups = () => {
   const [queryMonth, setQueryMonth] = useState<string | null>(null);
   const [queryWeek, setQueryWeek] = useState<string | null>(null);
   const [searchParams] = useSearchParams();
+  const [datetime, setDatetime] = useState<string | undefined>('');
   const [groups, setGroups] = useState<Record<string, string[]> | undefined>(
     {},
   );
@@ -23,13 +24,16 @@ const DailyscrumGroups = () => {
   }, [searchParams]);
 
   useEffect(() => {
-    apiGetGroups(queryYear, queryMonth, queryWeek).then((snapshot) =>
-      setGroups(snapshot?.data),
-    );
+    apiGetGroups(queryYear, queryMonth, queryWeek).then((snapshot) => {
+      setGroups(snapshot?.data.groups);
+      setDatetime(snapshot?.data.datetime);
+    });
   }, [queryYear, queryMonth, queryWeek]);
 
   return (
-    <DailyscrumGroupsLayout>
+    <DailyscrumGroupsLayout
+      title={`더 따뜻한 데일리스크럼 ${datetime}주차 그룹`}
+    >
       <DailyscrumGroupsContainer>
         <DailyscrumGroupsColumn groupName='A' members={groups?.A} />
         <DailyscrumGroupsColumn groupName='B' members={groups?.B} />

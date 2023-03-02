@@ -34,5 +34,8 @@ export interface ErrorResponseBody {
 }
 
 export interface GetGroupsResponseBody {
-  data: Record<string, string[]>;
+  data: {
+    datetime: string;
+    groups: Record<string, string[]>;
+  };
 }
